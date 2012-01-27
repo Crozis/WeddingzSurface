@@ -26,7 +26,10 @@ Title="WeddingzSurface"
             <s:ScatterView Name="MainScatterView">
                 <s:ScatterView.ItemTemplate>
                     <DataTemplate>
-                        <Image Source="{Binding}" />
+                        <Grid>
+                            <Image Source="{Binding frontPicture}" />
+                            <Label Content="{Binding name}" />
+                        </Grid>
                     </DataTemplate>
                 </s:ScatterView.ItemTemplate>
             </s:ScatterView>

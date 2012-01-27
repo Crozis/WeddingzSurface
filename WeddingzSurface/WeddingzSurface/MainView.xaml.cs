@@ -33,7 +33,7 @@ namespace WeddingzSurface
             AddActivationHandlers();
 
             // Load images
-            this.loadImages();
+            this.loadProviders();
         }
 
 
@@ -104,14 +104,26 @@ namespace WeddingzSurface
         }
 
 
-        private void loadImages()
+        private void loadProviders()
         {
-            // MainScatterView.ItemsSource = System.IO.Directory.GetFiles(@"C:\Users\Public\pictures\Sample Pictures", "*.jpg");
-            String[] items = new String[3];
-            items[0] = "http://s3.amazonaws.com/photos.500px.net/132342/7d68f306e7171f8602a41af7da80b3cb17726373/5.jpg?AWSAccessKeyId=AKIAJD7S52E7WX7K465A&Expires=1327673389&Signature=c75%2FHnx2UzNn8sTCaV3aNO7wtWc%3D";
-            items[1] = "http://s3.amazonaws.com/photos.500px.net/132342/7d68f306e7171f8602a41af7da80b3cb17726373/5.jpg?AWSAccessKeyId=AKIAJD7S52E7WX7K465A&Expires=1327673389&Signature=c75%2FHnx2UzNn8sTCaV3aNO7wtWc%3D";
-            items[2] = "http://s3.amazonaws.com/photos.500px.net/132342/7d68f306e7171f8602a41af7da80b3cb17726373/5.jpg?AWSAccessKeyId=AKIAJD7S52E7WX7K465A&Expires=1327673389&Signature=c75%2FHnx2UzNn8sTCaV3aNO7wtWc%3D";
-            MainScatterView.ItemsSource = items;
+            Provider p = new Provider();
+            p.frontPicture = "http://d24w6bsrhbeh9d.cloudfront.net/photo/2165142_460s_v1.jpg";
+            p.name = "Provider n°1";
+
+            Provider p2 = new Provider();
+            p2.frontPicture = "http://d24w6bsrhbeh9d.cloudfront.net/photo/2149770_460s_v1.jpg";
+            p2.name = "Provider n°2";
+
+            Provider p3 = new Provider();
+            p3.frontPicture = "http://d24w6bsrhbeh9d.cloudfront.net/photo/2158212_460s.jpg";
+            p3.name = "Provider n°3";
+
+            List<Provider> providers = new List<Provider>();
+            providers.Add(p);
+            providers.Add(p2);
+            providers.Add(p3);
+
+            MainScatterView.ItemsSource = providers.ToArray();
         }
 
     }
