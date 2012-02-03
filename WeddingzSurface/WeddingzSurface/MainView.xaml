@@ -14,9 +14,9 @@ Title="WeddingzSurface"
         <s:TagVisualizer>
 
             <s:TagVisualizer.Definitions>
-                <!-- Menu -->
+                <!-- iPad -->
                 <s:ByteTagVisualizationDefinition
-                    Source="MenuView.xaml"
+                    Source="iPadView.xaml"
                     Value="0xC0"
                     OrientationOffsetFromTag="0"
                     PhysicalCenterOffsetFromTag="0,0"
