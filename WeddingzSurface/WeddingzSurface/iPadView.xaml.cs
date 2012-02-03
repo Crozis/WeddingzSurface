@@ -16,6 +16,7 @@ using Microsoft.Surface.Presentation;
 using Microsoft.Surface.Presentation.Controls;
 using System.Net;
 using System.IO;
+using System.Windows.Media.Animation;
 
 namespace WeddingzSurface
 {
@@ -42,10 +43,25 @@ namespace WeddingzSurface
             }*/
             String jsonResponse = "[{'budget':1000,'client_id':null,'created_at':'2012-01-20T18:12:14Z','id':1,'nb_child':null,'nb_person':null,'organizer_id':null,'place':null,'updated_at':'2012-01-20T18:12:14Z'}]";
             fastJSON.JSON.Instance.ToObject(jsonResponse);
-            
+            //progressBar1.Value = 0;
+            rectangle2.Width = 0;
+            DoubleAnimation da = new DoubleAnimation();
+            da.From = 0;
+            da.To = 380;
+            da.Duration = new Duration(TimeSpan.FromSeconds(1.5));
+
+            rectangle2.BeginAnimation(Rectangle.WidthProperty, da);
+            //progressBar1.BeginAnimation(ProgressBar.ValueProperty, da);
+            //progressBar2.BeginAnimation(ProgressBar.ValueProperty, da);
+        
         }
         private void iPadView_Unloaded(object sender, RoutedEventArgs e)
         {
+        }
+
+        private void progressBar2_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+
         }
 
     }
