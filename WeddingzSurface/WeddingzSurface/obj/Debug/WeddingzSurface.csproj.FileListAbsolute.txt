@@ -16,5 +16,15 @@ C:\Users\Administrateur\Documents\Surface\WeddingzSurface\WeddingzSurface\Weddin
 C:\Users\Administrateur\Documents\Surface\WeddingzSurface\WeddingzSurface\WeddingzSurface\obj\Debug\WeddingzSurface.g.resources
 C:\Users\Administrateur\Documents\Surface\WeddingzSurface\WeddingzSurface\WeddingzSurface\obj\Debug\WeddingzSurface.Properties.Resources.resources
 C:\Users\Administrateur\Documents\Surface\WeddingzSurface\WeddingzSurface\WeddingzSurface\obj\Debug\WeddingzSurface.csproj.GenerateResource.Cache
+<<<<<<< HEAD
 C:\Users\Administrateur\Documents\Surface\WeddingzSurface\WeddingzSurface\WeddingzSurface\obj\Debug\WeddingzSurface.exe
 C:\Users\Administrateur\Documents\Surface\WeddingzSurface\WeddingzSurface\WeddingzSurface\obj\Debug\WeddingzSurface.pdb
+=======
+C:\Users\Administrateur\Documents\Surface\WeddingzSurface\WeddingzSurface\WeddingzSurface\bin\Debug\Resources\icon.png
+C:\Users\Administrateur\Documents\Surface\WeddingzSurface\WeddingzSurface\WeddingzSurface\bin\Debug\Resources\iconPreview.png
+C:\Users\Administrateur\Documents\Surface\WeddingzSurface\WeddingzSurface\WeddingzSurface\bin\Debug\WeddingzSurface.exe
+C:\Users\Administrateur\Documents\Surface\WeddingzSurface\WeddingzSurface\WeddingzSurface\bin\Debug\WeddingzSurface.pdb
+>>>>>>> Stashed changes
+C:\Users\Administrateur\Desktop\WS\WeddingzSurface\WeddingzSurface\obj\Debug\WeddingzSurface.exe
+C:\Users\Administrateur\Desktop\WS\WeddingzSurface\WeddingzSurface\obj\Debug\WeddingzSurface.pdb
+>>>>>>> f8a61b6161c9e929a31292d77ab08f2a3ff4c03a
