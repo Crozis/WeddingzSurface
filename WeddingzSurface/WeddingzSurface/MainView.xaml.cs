@@ -122,8 +122,14 @@ namespace WeddingzSurface
             providers.Add(p);
             providers.Add(p2);
             providers.Add(p3);
+            
+            // MainScatterView.ItemsSource = providers.ToArray();
 
-            MainScatterView.ItemsSource = providers.ToArray();
+            foreach (Provider pr in providers)
+            {
+                MainScatterView.Items.Add(new ProviderScatterViewItem(new ProviderTemplate(pr)));
+            }
+
         }
 
     }

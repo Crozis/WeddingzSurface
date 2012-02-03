@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 
 namespace WeddingzSurface
 {
-    class Provider
+
+    public class Provider
     {
         public int UID { get; set; }
         public string name { get; set; }

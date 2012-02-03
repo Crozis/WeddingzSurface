@@ -16,3 +16,5 @@ C:\work\WeddingzSurface\WeddingzSurface\WeddingzSurface\bin\Debug\WeddingzSurfac
 C:\work\WeddingzSurface\WeddingzSurface\WeddingzSurface\bin\Debug\WeddingzSurface.pdb
 C:\work\WeddingzSurface\WeddingzSurface\WeddingzSurface\obj\Debug\WeddingzSurface.exe
 C:\work\WeddingzSurface\WeddingzSurface\WeddingzSurface\obj\Debug\WeddingzSurface.pdb
+C:\work\WeddingzSurface\WeddingzSurface\WeddingzSurface\obj\Debug\ProviderTemplate.baml
+C:\work\WeddingzSurface\WeddingzSurface\WeddingzSurface\obj\Debug\ProviderTemplate.g.cs

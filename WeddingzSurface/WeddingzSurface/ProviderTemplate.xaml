@@ -1,0 +1,9 @@
+﻿<UserControl x:Class="WeddingzSurface.ProviderTemplate"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             Name="ProviderUserControl">
+    <Grid Name="ProviderGrid">
+        <Image Name="ProviderImage" />
+        <Label Name="ProviderName" Content="hello" />
+    </Grid>
+</UserControl>

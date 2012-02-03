@@ -23,8 +23,9 @@ Title="WeddingzSurface"
                     />
             </s:TagVisualizer.Definitions>
 
-            <s:ScatterView Name="MainScatterView">
-                <s:ScatterView.ItemTemplate>
+            <s:ScatterView Name="MainScatterView" />
+            <!--
+            <s:ScatterView.ItemTemplate>
                     <DataTemplate>
                         <Grid>
                             <Image Source="{Binding frontPicture}" />
@@ -33,6 +34,7 @@ Title="WeddingzSurface"
                     </DataTemplate>
                 </s:ScatterView.ItemTemplate>
             </s:ScatterView>
+            -->
 
         </s:TagVisualizer>
 
