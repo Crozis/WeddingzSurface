@@ -2,6 +2,9 @@
 using Microsoft.Surface.Presentation.Controls;
 using Microsoft.Surface.Presentation;
 
+using System.Windows.Media.Animation;
+using System.Windows;
+
 namespace WeddingzSurface
 {
     /// <summary>
@@ -14,6 +17,7 @@ namespace WeddingzSurface
         public ProviderScatterViewItem(ProviderTemplate pt)
         {
             this.providerTemplate = pt;
+            pt.setParent(this);
             this.initUI();
             this.initEvents();
         }
@@ -27,6 +31,5 @@ namespace WeddingzSurface
         {
             this.Content = this.providerTemplate;
         }
-
     }
 }
