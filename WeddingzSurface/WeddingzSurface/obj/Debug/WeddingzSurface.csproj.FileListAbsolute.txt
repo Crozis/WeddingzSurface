@@ -39,3 +39,5 @@ C:\Users\Administrateur\Documents\Surface\WeddingzSurface\WeddingzSurface\Weddin
 C:\Users\Administrateur\Documents\Surface\WeddingzSurface\WeddingzSurface\WeddingzSurface\bin\Debug\WeddingzSurface.exe
 C:\Users\Administrateur\Documents\Surface\WeddingzSurface\WeddingzSurface\WeddingzSurface\bin\Debug\WeddingzSurface.pdb
 >>>>>>> Stashed changes
+C:\Users\Administrateur\Desktop\WS\WeddingzSurface\WeddingzSurface\obj\Debug\WeddingzSurface.exe
+C:\Users\Administrateur\Desktop\WS\WeddingzSurface\WeddingzSurface\obj\Debug\WeddingzSurface.pdb
