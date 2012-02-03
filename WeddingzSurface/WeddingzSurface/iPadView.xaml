@@ -1,0 +1,11 @@
+﻿<s:TagVisualization x:Class="WeddingzSurface.iPadView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:s="http://schemas.microsoft.com/surface/2008"
+    Loaded="iPadView_Loaded"
+    Unloaded="iPadView_Unloaded">
+    
+    <Grid>
+        <Ellipse Margin="-210,-250,-210,-250" Name="ellipse1" Stroke="Black" Fill="Red" Opacity="0.5" />
+    </Grid>
+</s:TagVisualization>
