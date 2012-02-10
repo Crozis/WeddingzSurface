@@ -38,6 +38,10 @@
     <DefineConstants>TRACE</DefineConstants>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=4.0.7.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>libs\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -77,14 +81,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="fastJSON\Getters.cs" />
-    <Compile Include="fastJSON\JSON.cs" />
-    <Compile Include="fastJSON\JsonParser.cs" />
-    <Compile Include="fastJSON\JsonSerializer.cs" />
-    <Compile Include="fastJSON\SafeDictionary.cs" />
     <Compile Include="iPadView.xaml.cs">
       <DependentUpon>iPadView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Models\Wedding.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -108,7 +108,7 @@
     <Compile Include="MainView.xaml.cs">
       <DependentUpon>MainView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Provider.cs" />
+    <Compile Include="Models\Provider.cs" />
     <Compile Include="ProviderScatterViewItem.cs" />
     <Compile Include="ProviderTemplate.xaml.cs">
       <DependentUpon>ProviderTemplate.xaml</DependentUpon>
@@ -116,7 +116,6 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="fastJSON\fastJSON.csproj" />
     <Content Include="Resources\icon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
