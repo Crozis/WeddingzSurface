@@ -1,0 +1,8 @@
+﻿<s:SurfaceUserControl x:Class="WeddingzSurface.ImageThumbnailTemplate"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:s="http://schemas.microsoft.com/surface/2008">
+    <Grid>
+        <Image Name="Thumbnail" Width="50" Height="50"/>
+    </Grid>
+</s:SurfaceUserControl>

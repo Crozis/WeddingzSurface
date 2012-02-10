@@ -4,6 +4,7 @@ using Microsoft.Surface.Presentation;
 using System.Windows.Media.Imaging;
 using System.Windows.Media.Animation;
 using System.Windows;
+using System.Collections.ObjectModel;
 
 namespace WeddingzSurface
 {
@@ -46,7 +47,16 @@ namespace WeddingzSurface
             this.ProviderImage.Source = BitmapFrame.Create(new Uri(this.provider.frontPicture));
             this.ProviderName.Content = this.provider.name;
             this.ProviderNameDetail.Content = this.provider.name;
-            this.ProviderDescription.Text = "Vouassi la daiscripssion deux le derpina";
+            this.ProviderDescription.Text = this.provider.description;
+            this.ProviderFares.Content = this.provider.tarifs;
+
+            ObservableCollection<ImageThumbnailTemplate> dataTemplate = new ObservableCollection<ImageThumbnailTemplate>();
+
+            ImageThumbnailTemplate itt = new ImageThumbnailTemplate(this.provider.frontPicture, this.ProviderPrincipalImage);
+
+            dataTemplate.Add(itt);
+
+            this.PhotoLibrary.ItemsSource = dataTemplate;
         }
 
         public void toggle(object sender, ContactEventArgs args)
@@ -77,11 +87,13 @@ namespace WeddingzSurface
             switch (future)
             {
                 case ProviderItemState.detailed:
+                    this.onStoryboardStarted();
                     this._closer.Stop();
                     this._opener.Begin();
                     break;
 
                 case ProviderItemState.overview:
+                    this.onStoryboardStarted();
                     this._opener.Stop();
                     this._closer.Begin();
                     break;
@@ -91,7 +103,7 @@ namespace WeddingzSurface
         }
 
         /// <summary>
-        /// Creates a flipover animator.
+        /// Creates a scale animator.
         /// </summary>
         /// <param name="showBack">true if the back should be shown, false if front should be shown</param>
         /// <returns>a Storyboard instance that allows you to do the animations</returns>
@@ -120,7 +132,7 @@ namespace WeddingzSurface
             Storyboard.SetTarget(hModifier, this.parent);
             Storyboard.SetTargetProperty(hModifier, new PropertyPath(ProviderScatterViewItem.HeightProperty));
 
-            result.Completed += new EventHandler(onStoryboardCompleted);
+            //result.Completed += new EventHandler(onStoryboardCompleted);
 
             result.Children.Add(wModifier);
             result.Children.Add(hModifier);
@@ -129,6 +141,20 @@ namespace WeddingzSurface
         }
 
         public void onStoryboardCompleted(object sender, EventArgs e)
+        {
+            if (this.ProviderDetail.Visibility == Visibility.Hidden)
+            {
+                this.ProviderOverview.Visibility = Visibility.Hidden;
+                this.ProviderDetail.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                this.ProviderOverview.Visibility = Visibility.Visible;
+                this.ProviderDetail.Visibility = Visibility.Hidden;
+            }
+        }
+
+        public void onStoryboardStarted()
         {
             if (this.ProviderDetail.Visibility == Visibility.Hidden)
             {

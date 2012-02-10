@@ -109,10 +109,19 @@ namespace WeddingzSurface
             Provider p = new Provider();
             p.frontPicture = "http://d24w6bsrhbeh9d.cloudfront.net/photo/2165142_460s_v1.jpg";
             p.name = "Provider n°1";
+            p.pictures = new List<string>();
+            p.tarifs = "tarifs";
+            p.pictures.Add("http://d24w6bsrhbeh9d.cloudfront.net/photo/2165142_460s_v1.jpg");
+            p.pictures.Add("http://d24w6bsrhbeh9d.cloudfront.net/photo/2165142_460s_v1.jpg");
+            p.pictures.Add("http://d24w6bsrhbeh9d.cloudfront.net/photo/2165142_460s_v1.jpg");
 
             Provider p2 = new Provider();
             p2.frontPicture = "http://d24w6bsrhbeh9d.cloudfront.net/photo/2149770_460s_v1.jpg";
             p2.name = "Provider n°2";
+            p.pictures = new List<string>();
+            p.pictures.Add("http://d24w6bsrhbeh9d.cloudfront.net/photo/2165142_460s_v1.jpg");
+            p.pictures.Add("http://d24w6bsrhbeh9d.cloudfront.net/photo/2165142_460s_v1.jpg");
+            p.pictures.Add("http://d24w6bsrhbeh9d.cloudfront.net/photo/2165142_460s_v1.jpg");
 
             Provider p3 = new Provider();
             p3.frontPicture = "http://d24w6bsrhbeh9d.cloudfront.net/photo/2158212_460s.jpg";

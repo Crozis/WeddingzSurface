@@ -4,6 +4,7 @@ using Microsoft.Surface.Presentation;
 
 using System.Windows.Media.Animation;
 using System.Windows;
+using System.Windows.Controls;
 
 namespace WeddingzSurface
 {
@@ -16,6 +17,7 @@ namespace WeddingzSurface
 
         public ProviderScatterViewItem(ProviderTemplate pt)
         {
+            Console.WriteLine("Ici");
             this.providerTemplate = pt;
             pt.setParent(this);
             this.initUI();
@@ -26,6 +28,7 @@ namespace WeddingzSurface
         {
             this.ContactTapGesture += new ContactEventHandler(this.providerTemplate.toggle);
         }
+
 
         private void initUI()
         {

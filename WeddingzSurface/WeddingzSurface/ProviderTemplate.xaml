@@ -5,15 +5,14 @@
     <Grid Name="ProviderGride">
         <Grid Name="ProviderOverview" Visibility="Visible">
             <Image Name="ProviderImage"/>
-            <Label Name="ProviderName" Content="Overview"/>
+            <Label Name="ProviderName" Content="Name"/>
         </Grid>
         <Grid Name="ProviderDetail" Visibility="Hidden">
-            <Label Name="ProviderNameDetail" Content="Detail"/>
+            <Label Name="ProviderNameDetail" Content="Name"/>
             <TextBlock Name="ProviderDescription" Margin="10 30 10 10" Text="Description" />
-            <Label Name="ProviderFares" Margin="5 50 10 10" Content="Gratuit  pour les 10 premiers"/>
-            <Image Name="ProviderPrincipalImage"/>
-            <my:LibraryBar Name="libraryBar1" xmlns:my="http://schemas.microsoft.com/surface/2008" Height="81" VerticalAlignment="Bottom">
-                
+            <Label Name="ProviderFares" Margin="5 50 10 10" Content=""/>
+            <Image Name="ProviderPrincipalImage" Source="Resources/icon.png" Margin="37,68,39,89" />
+            <my:LibraryBar Name="PhotoLibrary" Rows="1" xmlns:my="http://schemas.microsoft.com/surface/2008" Margin="10,137,-10,79">
             </my:LibraryBar>
         </Grid>
     </Grid>
