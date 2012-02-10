@@ -14,6 +14,7 @@ namespace WeddingzSurface
         public string tarifs { get; set; }
         public string frontPicture { get; set; }
         public List<string> pictures { get; set; }
+        public string type { get; set; }
 
         public Provider()
         {
