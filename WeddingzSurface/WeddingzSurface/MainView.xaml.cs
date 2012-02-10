@@ -17,6 +17,7 @@ using Microsoft.Surface.Presentation.Controls;
 
 namespace WeddingzSurface
 {
+
     /// <summary>
     /// Interaction logic for MainView.xaml
     /// </summary>
@@ -33,7 +34,7 @@ namespace WeddingzSurface
             AddActivationHandlers();
 
             // Load images
-            this.loadProviders();
+            // this.loadProviders();
         }
 
 
@@ -107,24 +108,24 @@ namespace WeddingzSurface
         private void loadProviders()
         {
             Provider p = new Provider();
-            p.frontPicture = "http://d24w6bsrhbeh9d.cloudfront.net/photo/2165142_460s_v1.jpg";
+            p.front_picture = "http://d24w6bsrhbeh9d.cloudfront.net/photo/2165142_460s_v1.jpg";
             p.name = "Provider n°1";
-            p.pictures = new List<string>();
-            p.tarifs = "tarifs";
-            p.pictures.Add("http://d24w6bsrhbeh9d.cloudfront.net/photo/2165142_460s_v1.jpg");
-            p.pictures.Add("http://d24w6bsrhbeh9d.cloudfront.net/photo/2165142_460s_v1.jpg");
-            p.pictures.Add("http://d24w6bsrhbeh9d.cloudfront.net/photo/2165142_460s_v1.jpg");
+            p.pictures_url = new List<string>();
+            p.price = "tarifs";
+            p.pictures_url.Add("http://d24w6bsrhbeh9d.cloudfront.net/photo/2165142_460s_v1.jpg");
+            p.pictures_url.Add("http://d24w6bsrhbeh9d.cloudfront.net/photo/2165142_460s_v1.jpg");
+            p.pictures_url.Add("http://d24w6bsrhbeh9d.cloudfront.net/photo/2165142_460s_v1.jpg");
 
             Provider p2 = new Provider();
-            p2.frontPicture = "http://d24w6bsrhbeh9d.cloudfront.net/photo/2149770_460s_v1.jpg";
+            p2.front_picture = "http://d24w6bsrhbeh9d.cloudfront.net/photo/2149770_460s_v1.jpg";
             p2.name = "Provider n°2";
-            p.pictures = new List<string>();
-            p.pictures.Add("http://d24w6bsrhbeh9d.cloudfront.net/photo/2165142_460s_v1.jpg");
-            p.pictures.Add("http://d24w6bsrhbeh9d.cloudfront.net/photo/2165142_460s_v1.jpg");
-            p.pictures.Add("http://d24w6bsrhbeh9d.cloudfront.net/photo/2165142_460s_v1.jpg");
+            p.pictures_url = new List<string>();
+            p.pictures_url.Add("http://d24w6bsrhbeh9d.cloudfront.net/photo/2165142_460s_v1.jpg");
+            p.pictures_url.Add("http://d24w6bsrhbeh9d.cloudfront.net/photo/2165142_460s_v1.jpg");
+            p.pictures_url.Add("http://d24w6bsrhbeh9d.cloudfront.net/photo/2165142_460s_v1.jpg");
 
             Provider p3 = new Provider();
-            p3.frontPicture = "http://d24w6bsrhbeh9d.cloudfront.net/photo/2158212_460s.jpg";
+            p3.front_picture = "http://d24w6bsrhbeh9d.cloudfront.net/photo/2158212_460s.jpg";
             p3.name = "Provider n°3";
 
             List<Provider> providers = new List<Provider>();

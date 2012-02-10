@@ -35,6 +35,7 @@ namespace WeddingzSurface
         private void iPadView_Loaded(object sender, RoutedEventArgs e)
         {
             HttpWebRequest request = WebRequest.Create("http://weddingz.heroku.com/weddings/activated.json") as HttpWebRequest;
+
             // Get response
             String jsonResponse = "";
             using (HttpWebResponse response = request.GetResponse() as HttpWebResponse)
@@ -43,11 +44,17 @@ namespace WeddingzSurface
                 StreamReader reader = new StreamReader(response.GetResponseStream());
                 jsonResponse = reader.ReadToEnd();
             }
-            //String jsonResponse = "[{'budget':1000,'client_id':null,'created_at':'2012-01-20T18:12:14Z','id':1,'nb_child':null,'nb_person':null,'organizer_id':null,'place':null,'updated_at':'2012-01-20T18:12:14Z'}]";
-            //fastJSON.JSON.Instance.ToObject<List<Test>>("[{'name':'lala'}]");
-            //jsonResponse = jsonResponse.Remove('\\');
+
             Wedding wedding = JsonConvert.DeserializeObject<Wedding>(jsonResponse);
             
+            ScatterView sv = ((ScatterView)MainView.GetWindow(this).FindName("MainScatterView"));
+            sv.Items.Clear();
+            foreach (Provider pr in wedding.services)
+            {
+                sv.Items.Add(new ProviderScatterViewItem(new ProviderTemplate(pr)));
+            }
+
+
             //progressBar1.Value = 0;
             rectangle2.Width = 0;
             DoubleAnimation da = new DoubleAnimation();

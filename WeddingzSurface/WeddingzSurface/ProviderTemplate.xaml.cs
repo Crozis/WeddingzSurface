@@ -44,18 +44,22 @@ namespace WeddingzSurface
 
         private void fillWithData()
         {
-            this.ProviderImage.Source = BitmapFrame.Create(new Uri(this.provider.frontPicture));
+            this.ProviderImage.Source = BitmapFrame.Create(new Uri(this.provider.front_picture));
             this.ProviderName.Content = this.provider.name;
             this.ProviderNameDetail.Content = this.provider.name;
             this.ProviderDescription.Text = this.provider.description;
-            this.ProviderFares.Content = this.provider.tarifs;
+            this.ProviderFares.Content = this.provider.price;
+            this.ProviderPrincipalImage.Source = BitmapFrame.Create(new Uri(this.provider.front_picture));
 
+            
             ObservableCollection<ImageThumbnailTemplate> dataTemplate = new ObservableCollection<ImageThumbnailTemplate>();
-
-            ImageThumbnailTemplate itt = new ImageThumbnailTemplate(this.provider.frontPicture, this.ProviderPrincipalImage);
-
-            dataTemplate.Add(itt);
-
+            foreach (string url in this.provider.pictures_url) {
+                ImageThumbnailTemplate itt = new ImageThumbnailTemplate(url, this.ProviderPrincipalImage);
+                dataTemplate.Add(itt);
+            }
+            ImageThumbnailTemplate it = new ImageThumbnailTemplate(this.provider.front_picture, this.ProviderPrincipalImage);
+            dataTemplate.Add(it);
+            
             this.PhotoLibrary.ItemsSource = dataTemplate;
         }
 

@@ -8,13 +8,15 @@ namespace WeddingzSurface
 
     public class Provider
     {
-        public int UID { get; set; }
+        public int id { get; set; }
         public string name { get; set; }
+        public string phone_number { get; set; }
+        public string address { get; set; }
         public string description { get; set; }
-        public string tarifs { get; set; }
-        public string frontPicture { get; set; }
-        public List<string> pictures { get; set; }
         public string type { get; set; }
+        public string price { get; set; }
+        public string front_picture { get; set; }
+        public List<string> pictures_url { get; set; }
 
         public Provider()
         {
