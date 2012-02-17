@@ -44,28 +44,33 @@ namespace WeddingzSurface
                 StreamReader reader = new StreamReader(response.GetResponseStream());
                 jsonResponse = reader.ReadToEnd();
             }
-
-            Wedding wedding = JsonConvert.DeserializeObject<Wedding>(jsonResponse);
-            
-            ScatterView sv = ((ScatterView)MainView.GetWindow(this).FindName("MainScatterView"));
-            sv.Items.Clear();
-            foreach (Provider pr in wedding.services)
+            if (jsonResponse == "Aucun wedding n'est activé")
             {
-                sv.Items.Add(new ProviderScatterViewItem(new ProviderTemplate(pr)));
+                Console.WriteLine("HAHAHAHAHHA");
             }
+            else
+            {
+                Wedding wedding = JsonConvert.DeserializeObject<Wedding>(jsonResponse);
+                
+                ScatterView sv = ((ScatterView)MainView.GetWindow(this).FindName("MainScatterView"));
+                //sv.Items.Clear();
+                foreach (Provider pr in wedding.services)
+                {
+                    sv.Items.Add(new ProviderScatterViewItem(new ProviderTemplate(pr)));
+                }
 
 
-            //progressBar1.Value = 0;
-            rectangle2.Width = 0;
-            DoubleAnimation da = new DoubleAnimation();
-            da.From = 0;
-            da.To = 380;
-            da.Duration = new Duration(TimeSpan.FromSeconds(1.5));
+                //progressBar1.Value = 0;
+                rectangle2.Width = 0;
+                DoubleAnimation da = new DoubleAnimation();
+                da.From = 0;
+                da.To = 380;
+                da.Duration = new Duration(TimeSpan.FromSeconds(1.5));
 
-            rectangle2.BeginAnimation(Rectangle.WidthProperty, da);
-            //progressBar1.BeginAnimation(ProgressBar.ValueProperty, da);
-            //progressBar2.BeginAnimation(ProgressBar.ValueProperty, da);
-        
+                rectangle2.BeginAnimation(Rectangle.WidthProperty, da);
+                //progressBar1.BeginAnimation(ProgressBar.ValueProperty, da);
+                //progressBar2.BeginAnimation(ProgressBar.ValueProperty, da);
+            }
         }
         private void iPadView_Unloaded(object sender, RoutedEventArgs e)
         {

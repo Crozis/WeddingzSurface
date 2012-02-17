@@ -31,7 +31,7 @@ namespace WeddingzSurface
         {
             TrashBin t = (TrashBin)MainView.GetWindow(this).FindName("trashbin");
 
-            ScatterViewItem s = sender as ScatterViewItem;
+            ProviderScatterViewItem s = sender as ProviderScatterViewItem;
             ScatterViewItem trashSVI = MainView.GetWindow(this).FindName("trashbin_svi") as ScatterViewItem;
 
             Point centerS = s.ActualCenter;
@@ -47,7 +47,6 @@ namespace WeddingzSurface
                 (centerS.Y <= centerTrashSVI.Y + max / 2) &&
                 (centerS.Y >= centerTrashSVI.Y - max / 2))
             {
-                s = null;
 
                 ObservableCollection<Image> dataTemplate = (ObservableCollection<Image>)t.ItemsSource;
 
@@ -57,15 +56,16 @@ namespace WeddingzSurface
                 }
 
                 Image i = new Image();
-                BitmapImage bi = new BitmapImage();
-                bi.BeginInit();
-                bi.UriSource = new Uri("http://d24w6bsrhbeh9d.cloudfront.net/photo/2165142_460s_v1.jpg");
-                bi.EndInit();
-                i.Source = bi;
+                i.Source = s.providerTemplate.ProviderImage.Source;
 
                 dataTemplate.Add(i);
 
                 t.ItemsSource = dataTemplate;
+
+                // loop over all scattersView to delete
+                ScatterView sv = ((ScatterView)MainView.GetWindow(this).FindName("MainScatterView"));
+                ItemCollection tmp = (ItemCollection) sv.Items;
+                tmp.Remove(s);
             }
         }
 
