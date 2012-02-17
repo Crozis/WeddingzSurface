@@ -81,6 +81,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ImageThumbnailTemplate.xaml.cs">
+      <DependentUpon>ImageThumbnailTemplate.xaml</DependentUpon>
+    </Compile>
     <Compile Include="iPadView.xaml.cs">
       <DependentUpon>iPadView.xaml</DependentUpon>
     </Compile>
@@ -113,6 +116,7 @@
     <Compile Include="ProviderTemplate.xaml.cs">
       <DependentUpon>ProviderTemplate.xaml</DependentUpon>
     </Compile>
+    <Compile Include="TrashBin.cs" />
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
@@ -129,6 +133,10 @@
     <Resource Include="Resources\WindowBackground.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="ImageThumbnailTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="MainView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

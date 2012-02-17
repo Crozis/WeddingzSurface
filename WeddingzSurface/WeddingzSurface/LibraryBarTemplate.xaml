@@ -1,0 +1,8 @@
+﻿<s:SurfaceUserControl x:Class="WeddingzSurface.LibraryBarTemplate"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:s="http://schemas.microsoft.com/surface/2008">
+    <Grid>
+        <Image Source="{Binding Bitmap}" Grid.Row="1" Margin="0" Stretch="Uniform" VerticalAlignment="Stretch" />
+    </Grid>
+</s:SurfaceUserControl>
