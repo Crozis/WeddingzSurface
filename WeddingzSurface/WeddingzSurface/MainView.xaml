@@ -41,11 +41,11 @@ Title="WeddingzSurface"
                 <s:ScatterViewItem Name="trashbin_svi">
                     <my:TrashBin x:Name="trashbin" />
                 </s:ScatterViewItem>
-               
             </s:ScatterView>
         </s:TagVisualizer>
-        <Label FontSize="40" Name="WeddingName1" Foreground="#FFB40000" Width="auto" Margin="493,0,496,0" VerticalAlignment="Top" />
-        <Label FontSize="40" Name="WeddingName2" Foreground="#FFB40000" Width="auto" Margin="493,0,496,0" VerticalAlignment="Bottom" />
+
+        <Label FontSize="40" Name="WeddingName1" Foreground="#FFB40000" Margin="109,0,91,0" HorizontalAlignment="Center" VerticalAlignment="Top" Height="107"/>
+        <Label FontSize="40" Name="WeddingName2" Foreground="#FFB40000" Margin="95,0,105,0" HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="83"/>
     </Grid>
 
 </s:SurfaceWindow>

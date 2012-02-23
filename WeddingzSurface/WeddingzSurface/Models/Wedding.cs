@@ -20,7 +20,7 @@ namespace WeddingzSurface.Models
         public String groom_last_name { get; set; }
         public String groom_phone_number { get; set; }
         public String groom_email { get; set; }
-        public int religion { get; set; }
+        public String religion { get; set; }
         public String place_type { get; set; }
         public String desired_atmosphere { get; set; }
         public String note { get; set; }
