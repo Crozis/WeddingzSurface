@@ -5,11 +5,11 @@
     Loaded="Cart_Loaded"
     Unloaded="TagVisualization_Unloaded" Height="818" Width="322" Foreground="White">
     <Grid x:Name="ButtonsContainer" RenderTransformOrigin="0.487,0.545" Width="328" Height="793">
-        <s:SurfaceButton Click="ValidateButton_Click" Margin="55,0,53,301" Background="#FFB40000" Content="Valider" FontSize="20" Height="50" VerticalAlignment="Bottom" />
-        <s:SurfaceButton Name="florist" Margin="55,0,53,241" Background="#FFB40000" Content="Fleuristes" FontSize="20" Height="48" VerticalAlignment="Bottom" />
-        <s:SurfaceButton Name="place" Margin="55,0,53,180" Background="#FFB40000" Content="Lieux" FontSize="20" Height="50" VerticalAlignment="Bottom" />
-        <s:SurfaceButton Name="caterer" Margin="55,0,53,63" Background="#FFB40000"  VerticalAlignment="Bottom" Height="50" Content="Traiteurs" FontSize="20"/>
-        <s:SurfaceButton Name="photograph" Margin="55,0,53,7" Background="#FFB40000"  VerticalAlignment="Bottom" Height="50" Content="Photographes" FontSize="20" />
-        <s:SurfaceButton Name="animation" Margin="55,0,53,121" Background="#FFB40000" Content="Animations" FontSize="20" Height="50" VerticalAlignment="Bottom" />
+        <s:SurfaceButton Click="ValidateButton_Click" Foreground="White" Margin="52,0,56,53" Background="#FF00B400" Content="Valider" FontSize="20" Height="49" VerticalAlignment="Bottom" />
+        <s:SurfaceButton Name="florist" Margin="52,0,56,321" Foreground="White" Background="#FFB40000" Content="Fleuristes" FontSize="20" Height="48" VerticalAlignment="Bottom" />
+        <s:SurfaceButton Name="place" Margin="52,0,56,269" Foreground="White" Background="#FFB40000" Content="Lieux" FontSize="20" Height="50" VerticalAlignment="Bottom" />
+        <s:SurfaceButton Name="caterer" Margin="52,0,56,164" Foreground="White" Background="#FFB40000"  VerticalAlignment="Bottom" Height="50" Content="Traiteurs" FontSize="20"/>
+        <s:SurfaceButton Name="photograph" Margin="52,0,56,111" Foreground="White" Background="#FFB40000"  VerticalAlignment="Bottom" Height="50" Content="Photographes" FontSize="20" />
+        <s:SurfaceButton Name="animation" Margin="52,0,56,217" Foreground="White" Background="#FFB40000" Content="Animations" FontSize="20" Height="50" VerticalAlignment="Bottom" />
     </Grid>
 </s:TagVisualization>
