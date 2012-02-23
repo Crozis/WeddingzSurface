@@ -23,15 +23,12 @@ namespace WeddingzSurface
     public partial class ImageThumbnailTemplate : SurfaceUserControl
     {
 
-        public Image principalImage{get; set;}
-
-        public ImageThumbnailTemplate(string src, Image principal)
+        public ImageThumbnailTemplate(string src)
         {
             InitializeComponent();
 
             // attributes
             this.Thumbnail.Source = BitmapFrame.Create(new Uri(src));
-            this.principalImage = principal;
 
             // touch event
             this.ContactTapGesture += new ContactEventHandler(ImageThumbnailTemplate_ContactTapGesture);
