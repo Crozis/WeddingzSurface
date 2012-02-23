@@ -17,7 +17,7 @@ Title="WeddingzSurface"
                 <!-- iPad -->
                 <s:ByteTagVisualizationDefinition
                     Source="iPadView.xaml"
-                    Value="0xC4"
+                    Value="0xC1"
                     OrientationOffsetFromTag="0"
                     PhysicalCenterOffsetFromTag="0,0"
                     />
@@ -31,7 +31,7 @@ Title="WeddingzSurface"
                 <!-- Basket -->
                 <s:ByteTagVisualizationDefinition
                     Source="Cart.xaml"
-                    Value="0xC1"
+                    Value="0xC3"
                     OrientationOffsetFromTag="0"
                     PhysicalCenterOffsetFromTag="0,0"
                     />
@@ -41,8 +41,12 @@ Title="WeddingzSurface"
             </s:ScatterView>
         </s:TagVisualizer>
 
-        <Label FontSize="40" Name="WeddingName1" Foreground="#FFB40000" Margin="109,0,91,0" HorizontalAlignment="Center" VerticalAlignment="Top" Height="107"/>
-        <Label FontSize="40" Name="WeddingName2" Foreground="#FFB40000" Margin="95,0,105,0" HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="83"/>
+        <Label FontSize="40" Name="WeddingName1" Foreground="#FFB40000" Margin="109,0,91,0" HorizontalAlignment="Center" VerticalAlignment="Top" Height="80">
+            <Label.LayoutTransform>
+                <RotateTransform Angle="180"/>
+            </Label.LayoutTransform>
+        </Label>
+        <Label FontSize="40" Name="WeddingName2" Foreground="#FFB40000" Margin="95,0,105,0" HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="80"/>
     </Grid>
 
 </s:SurfaceWindow>

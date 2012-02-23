@@ -5,34 +5,35 @@
     Loaded="Cart_Loaded"
     Unloaded="TagVisualization_Unloaded" Height="818" Width="730" Foreground="White">
     <Grid x:Name="ButtonsContainer" RenderTransformOrigin="0.487,0.545" Width="328" Height="793">
-        <Image Source="pack://application:,,,/Resources/bulle.png" Width="74" Height="51" HorizontalAlignment="Right" Margin="0,316,-197,0" VerticalAlignment="Top" />
-        <Image Source="pack://application:,,,/Resources/bulle.png" Width="74" Height="51" HorizontalAlignment="Right" Margin="0,0,-197,311" VerticalAlignment="Bottom" />
-        <Image Source="pack://application:,,,/Resources/bulle.png" Width="74" Height="51" HorizontalAlignment="Left" Margin="-205,316,0,0" VerticalAlignment="Top" FlowDirection="RightToLeft" />
-        <Image Source="pack://application:,,,/Resources/bulle.png" Width="74" Height="51" HorizontalAlignment="Left" Margin="-205,0,0,311" VerticalAlignment="Bottom" FlowDirection="RightToLeft" />
-        <Image Source="pack://application:,,,/Resources/bulle_up.png" Height="74" Margin="138,135,139,0" VerticalAlignment="Top" FlowDirection="RightToLeft" />
-        <Label Name="PlaceNumber" FontSize="20" Foreground="White" Height="36.6" VerticalAlignment="Top" Margin="153,139,154,0" />
-        <Label Name="PhotographNumber" FontSize="20" Foreground="White" Height="36.6" VerticalAlignment="Top" Margin="0,321,-202,0" HorizontalAlignment="Right" Width="43" />
-        <Label Name="AnimationNumber" FontSize="20" Foreground="White" Margin="0,0,-202,319" HorizontalAlignment="Right" Width="43" Height="37" VerticalAlignment="Bottom" />
-        <Label Name="FloristNumber" FontSize="20" Foreground="White" Margin="-189,0,0,320" HorizontalAlignment="Left" Width="43" Height="37" VerticalAlignment="Bottom" />
-        <Label Name="CatererNumber" FontSize="20" Foreground="White" Margin="-189,322,0,0" HorizontalAlignment="Left" Width="43" Height="37" VerticalAlignment="Top" />
-        <s:SurfaceButton Click="ValidateButton_Click" Foreground="White" Margin="89,0,89,204" Background="#FF00B400" Content="Valider" FontSize="20" Height="70" VerticalAlignment="Bottom" />
+        <Image Source="pack://application:,,,/Resources/bulle.png" Width="74" Height="51" HorizontalAlignment="Right" Margin="0,316,-192,0" VerticalAlignment="Top" />
+        <Image Source="pack://application:,,,/Resources/bulle.png" Width="74" Height="51" HorizontalAlignment="Right" Margin="0,0,-192,311" VerticalAlignment="Bottom" />
+        <Image Source="pack://application:,,,/Resources/bulle.png" Width="74" Height="51" HorizontalAlignment="Left" Margin="-200,316,0,0" VerticalAlignment="Top" FlowDirection="RightToLeft" />
+        <Image Source="pack://application:,,,/Resources/bulle.png" Width="74" Height="51" HorizontalAlignment="Left" Margin="-200,0,0,311" VerticalAlignment="Bottom" FlowDirection="RightToLeft" />
+        <Image Source="pack://application:,,,/Resources/bulle_up.png" Height="74" Margin="138,140,139,0" VerticalAlignment="Top" FlowDirection="RightToLeft" />
+        <Label FontWeight="bold" Name="PlaceNumber" FontSize="20" Foreground="White" Height="36.6" VerticalAlignment="Top" Margin="153,144,154,0" />
+        <Label FontWeight="bold" Name="PhotographNumber" FontSize="20" Foreground="White" Height="36.6" VerticalAlignment="Top" Margin="0,322,-192,0" HorizontalAlignment="Right" Width="43" />
+        <Label FontWeight="bold" Name="AnimationNumber" FontSize="20" Foreground="White" Margin="0,0,-192,320" HorizontalAlignment="Right" Width="43" Height="37" VerticalAlignment="Bottom" />
+        <Label FontWeight="bold" Name="FloristNumber" FontSize="20" Foreground="White" Margin="-189,0,0,320" Height="37" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="38" />
+        <Label FontWeight="bold" Name="CatererNumber" FontSize="20" Foreground="White" Margin="-189,322,0,0" Height="37" VerticalAlignment="Top" HorizontalAlignment="Left" Width="38" />
+        <s:SurfaceButton Click="ValidateButton_Click" Foreground="White" Margin="54,0,54,205" Background="#FF00B400" Content="Valider" FontSize="20" Height="70" VerticalAlignment="Bottom" />
 
         <s:SurfaceButton Click="florist_click"    Name="florist" Margin="-142,0,0,302" Foreground="White" Background="#FFB40000" FontSize="20" HorizontalAlignment="Left" Width="220" Height="75" VerticalAlignment="Bottom">
               <Grid Width="200" Height="61">
-                  <Label Content="Fleuristes" Margin="70,12.2,26,12.2" Foreground="White"/>
+                  <Label Content="Fleuristes" Margin="97,12.2,0,12.2" Foreground="White" HorizontalAlignment="Left" Width="108" />
                   <Image Source="pack://application:,,,/Resources/florist_icon.png" Margin="5,13,0,6" Stretch="Fill" HorizontalAlignment="Left" Width="47" />
             </Grid>
         </s:SurfaceButton>
        
-        <s:SurfaceButton Click="place_click"      Name="place" Margin="83,200,83,0" Foreground="White" Background="#FFB40000" FontSize="20" Width="150" Height="75" VerticalAlignment="Top">
+        <s:SurfaceButton Click="place_click"      Name="place" Margin="54,198,54,0" Foreground="White" Background="#FFB40000" FontSize="20" Height="75" VerticalAlignment="Top">
             <Grid Width="200" Height="61">
-                <Label Content="Lieux" Margin="57,12.2,62,12.2" Foreground="White" />
+                <Label Content="Lieux" Margin="0,12.2,-5,12.2" Foreground="White" HorizontalAlignment="Right" Width="79" />
                 <Image Source="pack://application:,,,/Resources/place_icon.png" Margin="12,5.52,159,3.48" Stretch="Fill" />
             </Grid>
         </s:SurfaceButton>
         <s:SurfaceButton Click="caterer_click"    Name="caterer" Margin="-142,304,0,0" Foreground="White" Background="#FFB40000" Width="220"  FontSize="20" HorizontalAlignment="Left" Height="75" VerticalAlignment="Top">
+            
             <Grid Width="200" Height="61">
-                <Label Content="Traiteurs" Margin="72,12.2,22,12.2" Foreground="White"/>
+                <Label Content="Traiteurs" Margin="0,12.2,3,12.2" Foreground="White" HorizontalAlignment="Right" Width="91" />
                 <Image Source="pack://application:,,,/Resources/caterer_icon.png" Margin="9,8,0,5" Stretch="Fill" HorizontalAlignment="Left" Width="47" />
             </Grid>
         </s:SurfaceButton>
@@ -44,7 +45,7 @@
         </s:SurfaceButton>
         <s:SurfaceButton Click="animation_click"  Name="animation" Margin="0,0,-135,302" Foreground="White" Background="#FFB40000" FontSize="20" HorizontalAlignment="Right" Width="220" Height="75" VerticalAlignment="Bottom">
             <Grid Width="200" Height="61">
-                <Label Content="Animations" Margin="63,12.2,17,12.2" Foreground="White"/>
+                <Label Content="Animations" Margin="79,12.2,-5,12.2" Foreground="White"/>
                 <Image Source="pack://application:,,,/Resources/animation_icon.png" Margin="9,9,0,5" Stretch="Fill" HorizontalAlignment="Left" Width="34" />
             </Grid>
         </s:SurfaceButton>

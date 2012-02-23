@@ -33,7 +33,30 @@ namespace WeddingzSurface
 
         private void ValidateButton_Click(object sender, RoutedEventArgs e)
         {
+            String activated_services = "";
+            String disabled_services = "";
+            foreach (ProviderType provider_type in StaticField.wedding.service_types) 
+            {
+                foreach (Provider service in provider_type.services) 
+                {
+                    if (service.activated == true)
+                    {
+                        activated_services += service.id + ";" ;
+                    }
+                    else
+                    {
+                        disabled_services += service.id + ";";
+                    }
+                }
+            }
+            HttpWebRequest request1 = WebRequest.Create("http://weddingz.heroku.com/weddings/" + StaticField.wedding.id + "/activate_services/" + activated_services) as HttpWebRequest;
+            request1.GetResponse();
 
+            HttpWebRequest request2 = WebRequest.Create("http://weddingz.heroku.com/weddings/" + StaticField.wedding.id + "/disabled_services/" + disabled_services) as HttpWebRequest;
+            request2.GetResponse();
+            ScatterView sv = ((ScatterView)MainView.GetWindow(this).FindName("MainScatterView"));
+            sv.Items.Clear();
+            
         }
 
         private void Cart_Loaded(object sender, RoutedEventArgs e)
@@ -43,18 +66,6 @@ namespace WeddingzSurface
             label1.Content = "";
             label2.Content = "";
             
-
-            /*Image on buttons*/
-            /*
-            Image logoImage = new Image();
-            BitmapImage logoBitmap = new BitmapImage();
-            logoBitmap.BeginInit();
-            logoBitmap.UriSource = new Uri("http://img594.imageshack.us/img594/8813/hebergement.png");
-            logoBitmap.EndInit();
-            logoImage.Source = logoBitmap;
-            florist.Content = logoImage;
-            Console.WriteLine("???");
-            */
             if (StaticField.wedding == null)
             {
                 HttpWebRequest request = WebRequest.Create("http://weddingz.heroku.com/weddings/activated.json") as HttpWebRequest;
