@@ -7,6 +7,6 @@
     
     <Grid>
         <Rectangle Margin="-190,-250" Name="rectangle1" Stroke="Black" Fill="Black" Opacity="0.8" RadiusX="15" RadiusY="15" StrokeThickness="0" />
-        <Rectangle Fill="Cyan" Margin="-190,-250" Name="rectangle2" Opacity="0.8" RadiusX="15" RadiusY="15" Stroke="Black" StrokeThickness="0" StrokeMiterLimit="10" />
+        <Rectangle Fill="#FFB40000" Margin="-190,-250" Name="rectangle2" Opacity="0.8" RadiusX="15" RadiusY="15" Stroke="Black" StrokeThickness="0" StrokeMiterLimit="10" />
     </Grid>
 </s:TagVisualization>

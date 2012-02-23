@@ -81,12 +81,16 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Basket.xaml.cs">
+      <DependentUpon>Basket.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ImageThumbnailTemplate.xaml.cs">
       <DependentUpon>ImageThumbnailTemplate.xaml</DependentUpon>
     </Compile>
     <Compile Include="iPadView.xaml.cs">
       <DependentUpon>iPadView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Models\ProviderType.cs" />
     <Compile Include="Models\Wedding.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -120,6 +124,7 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Resources\cross_scratches.png" />
     <Content Include="Resources\icon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -133,6 +138,10 @@
     <Resource Include="Resources\WindowBackground.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Basket.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="ImageThumbnailTemplate.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
