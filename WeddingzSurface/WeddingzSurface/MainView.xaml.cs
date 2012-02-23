@@ -143,5 +143,10 @@ namespace WeddingzSurface
 
         }
 
+        private void MainScatterView_Drop(object sender, DragEventArgs e)
+        {
+            Console.WriteLine("DROP");
+        }
+
     }
 }

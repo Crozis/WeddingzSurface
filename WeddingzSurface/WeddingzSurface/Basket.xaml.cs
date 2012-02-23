@@ -41,11 +41,12 @@ namespace WeddingzSurface
 
         public void loadServices(String service_name)
         {
+            ScatterView sv = ((ScatterView)MainView.GetWindow(this).FindName("MainScatterView"));
+
             foreach (ProviderType provider_type in StaticField.wedding.service_types)
             {
                 if (provider_type.name == service_name) 
                 {
-                    ScatterView sv = ((ScatterView)MainView.GetWindow(this).FindName("MainScatterView"));
                     sv.Items.Clear();
 
                     foreach (Provider pr in provider_type.services)
@@ -54,6 +55,9 @@ namespace WeddingzSurface
                     }   
                 }
             }
+            // init trashbin
+            StaticField.trashSVI = new TrashBinScatterViewItem(new TrashBin());
+            sv.Items.Add(StaticField.trashSVI);
         }
     }
 }

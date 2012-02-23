@@ -37,11 +37,7 @@ Title="WeddingzSurface"
                     />
             </s:TagVisualizer.Definitions>
            
-            <s:ScatterView Name="MainScatterView">
-                <s:ScatterViewItem Name="trashbin_svi">
-                    <my:TrashBin x:Name="trashbin" />
-                </s:ScatterViewItem>
-               
+            <s:ScatterView Name="MainScatterView" Drop="MainScatterView_Drop">
             </s:ScatterView>
         </s:TagVisualizer>
         <Label FontSize="40" Name="WeddingName1" Foreground="#FFB40000" Width="auto" Margin="493,0,496,0" VerticalAlignment="Top" />

@@ -7,6 +7,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Collections.ObjectModel;
 using System.Windows.Media.Imaging;
+using WeddingzSurface.Models;
 
 namespace WeddingzSurface
 {
@@ -20,7 +21,7 @@ namespace WeddingzSurface
         public ProviderScatterViewItem(ProviderTemplate pt)
         {
             this.MaxWidth = 400;
-            Console.WriteLine("Ici");
+            Console.WriteLine("New PSVI");
             this.providerTemplate = pt;
             pt.setParent(this);
             this.initUI();
@@ -30,10 +31,10 @@ namespace WeddingzSurface
 
         void ProviderScatterViewItem_ContactUp(object sender, ContactEventArgs e)
         {
-            TrashBin t = (TrashBin)MainView.GetWindow(this).FindName("trashbin");
+            TrashBin t = StaticField.trashSVI.trashBin;
 
             ProviderScatterViewItem s = sender as ProviderScatterViewItem;
-            ScatterViewItem trashSVI = MainView.GetWindow(this).FindName("trashbin_svi") as ScatterViewItem;
+            ScatterViewItem trashSVI = StaticField.trashSVI;
 
             Point centerS = s.ActualCenter;
             Point centerTrashSVI = trashSVI.ActualCenter;

@@ -41,15 +41,6 @@ namespace WeddingzSurface
                 }
                  */
             }
-
-            /*
-            // Remove duplicated card
-            Card alreadyInsideCard = this.containsCard(droppedCard);
-            if (alreadyInsideCard != null)
-            {
-                this.Items.Remove(alreadyInsideCard);
-            }
-             */
         }
     }
 }
