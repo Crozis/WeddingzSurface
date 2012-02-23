@@ -160,10 +160,13 @@ namespace WeddingzSurface
             var st = StaticField.wedding.service_types;
             for (int i = 0; i < st.Count; i++)
             {
-                if (trashToRecover.template.provider.id == st[i].id)
+                for (int j = 0; j < st[i].services.Count; j++)
                 {
-                    st[i].activated = true;
-                    Console.WriteLine("GOT IT !" + st[i].activated);
+                    if (trashToRecover.template.provider.id == st[i].services[j].id)
+                    {
+                        st[i].services[j].activated = true;
+                        Console.WriteLine("GOT IT !" + st[i].services[j].activated);
+                    }
                 }
             }
         }
