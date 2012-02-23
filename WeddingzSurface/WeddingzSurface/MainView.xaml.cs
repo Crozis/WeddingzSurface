@@ -146,15 +146,15 @@ namespace WeddingzSurface
         private void MainScatterView_Drop(object sender, SurfaceDragDropEventArgs e)
         {
             Console.WriteLine("Got drop: " + e.Cursor.Data);
-            /*var x = sender;
-            var newItem = new ProviderScatterViewItem(new ProviderTemplate(new Provider()));
-            // Rely on .ToString() on the data. A real app would do something more clever
-            newItem.Content = e.Cursor.Data;
+           
+            Trash trashToRecover = (Trash)e.Cursor.Data;
+            
+            var newItem = new ProviderScatterViewItem((ProviderTemplate) trashToRecover.template.Clone());
+
             // Place the new item at the drop location
             newItem.Center = e.Cursor.GetPosition(MainScatterView);
             // Add it to the scatterview
             MainScatterView.Items.Add(newItem);
-             */
         }
 
     }
