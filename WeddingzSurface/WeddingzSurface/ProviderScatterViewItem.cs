@@ -7,6 +7,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Collections.ObjectModel;
 using System.Windows.Media.Imaging;
+using WeddingzSurface.Models;
 
 namespace WeddingzSurface
 {
@@ -20,7 +21,7 @@ namespace WeddingzSurface
         public ProviderScatterViewItem(ProviderTemplate pt)
         {
             this.MaxWidth = 400;
-            Console.WriteLine("Ici");
+            Console.WriteLine("New PSVI");
             this.providerTemplate = pt;
             pt.setParent(this);
             this.initUI();
@@ -30,10 +31,10 @@ namespace WeddingzSurface
 
         void ProviderScatterViewItem_ContactUp(object sender, ContactEventArgs e)
         {
-            TrashBin t = (TrashBin)MainView.GetWindow(this).FindName("trashbin");
+            TrashBin t = StaticField.trashSVI.trashBin;
 
             ProviderScatterViewItem s = sender as ProviderScatterViewItem;
-            ScatterViewItem trashSVI = MainView.GetWindow(this).FindName("trashbin_svi") as ScatterViewItem;
+            ScatterViewItem trashSVI = StaticField.trashSVI;
 
             Point centerS = s.ActualCenter;
             Point centerTrashSVI = trashSVI.ActualCenter;
@@ -49,19 +50,32 @@ namespace WeddingzSurface
                 (centerS.Y >= centerTrashSVI.Y - max / 2))
             {
 
-                ObservableCollection<Image> dataTemplate = (ObservableCollection<Image>)t.ItemsSource;
+                ObservableCollection<Trash> dataTemplate = (ObservableCollection<Trash>) t.ItemsSource;
 
                 if (dataTemplate == null)
                 {
-                    dataTemplate = new ObservableCollection<Image>();
+                    dataTemplate = new ObservableCollection<Trash>();
                 }
 
-                Image i = new Image();
-                i.Source = s.providerTemplate.ProviderImage.Source;
 
-                dataTemplate.Add(i);
+                Trash trash = new Trash(s.providerTemplate, s.providerTemplate.ProviderImage.Source);
+                dataTemplate.Add(trash);
 
                 t.ItemsSource = dataTemplate;
+                
+                // loop over Wedding services to disactivate
+                var st = StaticField.wedding.service_types;
+                for (int i = 0; i < st.Count; i++)
+                {
+                    for (int j = 0; j < st[i].services.Count; j++)
+                    {
+                        if (s.providerTemplate.provider.id == st[i].services[j].id)
+                        {
+                            st[i].services[j].activated = false;
+                            Console.WriteLine("GOT IT !" + st[i].services[j].activated);
+                        }
+                    }
+                }
 
                 // loop over all scattersView to delete
                 ScatterView sv = ((ScatterView)MainView.GetWindow(this).FindName("MainScatterView"));

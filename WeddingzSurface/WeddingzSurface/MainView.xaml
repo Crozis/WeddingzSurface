@@ -36,11 +36,8 @@ Title="WeddingzSurface"
                     PhysicalCenterOffsetFromTag="0,0"
                     />
             </s:TagVisualizer.Definitions>
-           
-            <s:ScatterView Name="MainScatterView">
-                <s:ScatterViewItem Name="trashbin_svi">
-                    <my:TrashBin x:Name="trashbin" />
-                </s:ScatterViewItem>
+
+            <s:ScatterView Name="MainScatterView" Background="Transparent" AllowDrop="True"  s:SurfaceDragDrop.Drop="MainScatterView_Drop" >
             </s:ScatterView>
         </s:TagVisualizer>
 

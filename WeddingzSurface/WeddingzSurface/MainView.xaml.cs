@@ -143,5 +143,33 @@ namespace WeddingzSurface
 
         }
 
+        private void MainScatterView_Drop(object sender, SurfaceDragDropEventArgs e)
+        {
+            Console.WriteLine("Got drop: " + e.Cursor.Data);
+           
+            Trash trashToRecover = (Trash)e.Cursor.Data;
+            
+            var newItem = new ProviderScatterViewItem((ProviderTemplate) trashToRecover.template.Clone());
+
+            // Place the new item at the drop location
+            newItem.Center = e.Cursor.GetPosition(MainScatterView);
+            // Add it to the scatterview
+            MainScatterView.Items.Add(newItem);
+
+            // loop over Wedding services to disactivate
+            var st = StaticField.wedding.service_types;
+            for (int i = 0; i < st.Count; i++)
+            {
+                for (int j = 0; j < st[i].services.Count; j++)
+                {
+                    if (trashToRecover.template.provider.id == st[i].services[j].id)
+                    {
+                        st[i].services[j].activated = true;
+                        Console.WriteLine("GOT IT !" + st[i].services[j].activated);
+                    }
+                }
+            }
+        }
+
     }
 }

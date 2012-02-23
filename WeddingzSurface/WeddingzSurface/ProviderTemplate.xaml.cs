@@ -14,9 +14,9 @@ namespace WeddingzSurface
         detailed
     }
 
-    public partial class ProviderTemplate : UserControl
+    public partial class ProviderTemplate : UserControl, ICloneable
     {
-        private Provider provider;
+        public Provider provider;
         private ProviderItemState currentState;
 
         private ProviderScatterViewItem parent;
@@ -197,5 +197,15 @@ namespace WeddingzSurface
             this._opener = this.generateMorpher(true);
             this._closer = this.generateMorpher(false);
         }
+
+        #region ICloneable Membres
+
+        public object Clone()
+        {
+            ProviderTemplate pt = new ProviderTemplate(this.provider);
+            return pt;
+        }
+
+        #endregion
     }
 }
