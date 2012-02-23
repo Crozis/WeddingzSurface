@@ -8,10 +8,10 @@ namespace WeddingzSurface.Models
     class Wedding
     {
         public int id                   { get; set; }
-        public int budget               { get; set; }
-        public String place             { get; set; }
-        public int nb_person            { get; set; }
-        public bool has_child           { get; set; }
+        public int budget { get; set; }
+        public String place { get; set; }
+        public int nb_person { get; set; }
+        public bool has_child { get; set; }
         public String bride_first_name { get; set; }
         public String bride_last_name { get; set; }
         public String bride_phone_number { get; set; }

@@ -23,7 +23,7 @@ namespace WeddingzSurface
     /// Interaction logic for MainView.xaml
     /// </summary>
     public partial class MainView : SurfaceWindow
-    {
+    {   
         /// <summary>
         /// Default constructor.
         /// </summary>

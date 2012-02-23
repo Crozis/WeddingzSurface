@@ -25,45 +25,23 @@ namespace WeddingzSurface
     /// </summary>
     public partial class Basket : TagVisualization
     {
-        Wedding wedding;
+        //Wedding wedding;
         public Basket()
         {
             InitializeComponent();
         }
-        private void Basket_Loaded(object sender, RoutedEventArgs e)
-        {
-            HttpWebRequest request = WebRequest.Create("http://weddingz.heroku.com/weddings/activated.json") as HttpWebRequest;
+        private void Basket_Loaded(object sender, RoutedEventArgs e) {}
+        private void Basket_Unloaded(object sender, RoutedEventArgs e) {}
 
-            // Get response
-            String jsonResponse = "";
-            using (HttpWebResponse response = request.GetResponse() as HttpWebResponse)
-            {
-                // Get the response stream  
-                StreamReader reader = new StreamReader(response.GetResponseStream());
-                jsonResponse = reader.ReadToEnd();
-            }
-            if (jsonResponse == "Aucun wedding n'est activé")
-            {
-                Console.WriteLine("Aucun wedding n'est activé");
-            }
-            else
-            {
-                wedding = JsonConvert.DeserializeObject<Wedding>(jsonResponse);
-            }
-        }
-        private void Basket_Unloaded(object sender, RoutedEventArgs e)
-        {
-        }
+        public void florist_click(object sender, RoutedEventArgs e) { loadServices("Fleuristes"); }
+        public void place_click(object sender, RoutedEventArgs e) { loadServices("Lieux"); }
+        public void photograph_click(object sender, RoutedEventArgs e) { loadServices("Photographes"); }
+        public void caterer_click(object sender, RoutedEventArgs e) { loadServices("Traiteurs"); }
+        public void animation_click(object sender, RoutedEventArgs e) { loadServices("Animations"); }
 
-        private void florist_click(object sender, RoutedEventArgs e)  { loadServices("Fleuristes"); }
-        private void place_click(object sender, RoutedEventArgs e)  { loadServices("Lieux"); }
-        private void photograph_click(object sender, RoutedEventArgs e) { loadServices("Photographes"); }
-        private void caterer_click(object sender, RoutedEventArgs e) { loadServices("Traiteurs"); }
-        private void animation_click(object sender, RoutedEventArgs e) { loadServices("Animations"); }
-
-        private void loadServices(String service_name)
+        public void loadServices(String service_name)
         {
-            foreach (ProviderType provider_type in wedding.service_types)
+            foreach (ProviderType provider_type in StaticField.wedding.service_types)
             {
                 if (provider_type.name == service_name) 
                 {

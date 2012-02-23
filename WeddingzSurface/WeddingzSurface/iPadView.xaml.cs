@@ -27,13 +27,12 @@ namespace WeddingzSurface
     /// </summary>
     public partial class iPadView : TagVisualization
     {
-        Wedding wedding;
         public iPadView()
         {
             InitializeComponent();
         }
 
-        private void iPadView_Loaded(object sender, RoutedEventArgs e)
+        public void iPadView_Loaded(object sender, RoutedEventArgs e)
         {
             HttpWebRequest request = WebRequest.Create("http://weddingz.heroku.com/weddings/activated.json") as HttpWebRequest;
             
@@ -51,28 +50,19 @@ namespace WeddingzSurface
             }
             else
             {
-                wedding = JsonConvert.DeserializeObject<Wedding>(jsonResponse);
+                StaticField.wedding = JsonConvert.DeserializeObject<Wedding>(jsonResponse);
                 
-                ScatterView sv = ((ScatterView)MainView.GetWindow(this).FindName("MainScatterView"));
-                //sv.Items.Clear();
-                /*
-                foreach (Provider pr in wedding.service_types.services)
-                {
-                    sv.Items.Add(new ProviderScatterViewItem(new ProviderTemplate(pr)));
-                }
-                */
-
-
-                //progressBar1.Value = 0;
                 rectangle2.Width = 0;
                 DoubleAnimation da = new DoubleAnimation();
                 da.From = 0;
                 da.To = 380;
                 da.Duration = new Duration(TimeSpan.FromSeconds(1.5));
-
                 rectangle2.BeginAnimation(Rectangle.WidthProperty, da);
-                //progressBar1.BeginAnimation(ProgressBar.ValueProperty, da);
-                //progressBar2.BeginAnimation(ProgressBar.ValueProperty, da);
+                Label label1 = ((Label)MainView.GetWindow(this).FindName("WeddingName1"));
+                Label label2 = ((Label)MainView.GetWindow(this).FindName("WeddingName2"));
+                String content = "Mariage de " + StaticField.wedding.bride_first_name + " et " + StaticField.wedding.groom_first_name;
+                label1.Content = content;
+                label2.Content = content;
             }
         }
         private void iPadView_Unloaded(object sender, RoutedEventArgs e)

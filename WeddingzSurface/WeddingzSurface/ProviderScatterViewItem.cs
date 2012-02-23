@@ -19,6 +19,7 @@ namespace WeddingzSurface
 
         public ProviderScatterViewItem(ProviderTemplate pt)
         {
+            this.MaxWidth = 400;
             Console.WriteLine("Ici");
             this.providerTemplate = pt;
             pt.setParent(this);

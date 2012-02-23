@@ -84,6 +84,9 @@
     <Compile Include="Basket.xaml.cs">
       <DependentUpon>Basket.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Cart.xaml.cs">
+      <DependentUpon>Cart.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ImageThumbnailTemplate.xaml.cs">
       <DependentUpon>ImageThumbnailTemplate.xaml</DependentUpon>
     </Compile>
@@ -91,6 +94,7 @@
       <DependentUpon>iPadView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Models\ProviderType.cs" />
+    <Compile Include="Models\StaticField.cs" />
     <Compile Include="Models\Wedding.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -124,7 +128,7 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\cross_scratches.png" />
+    <Resource Include="Resources\cross_scratches.jpg" />
     <Content Include="Resources\icon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -141,6 +145,10 @@
     <Page Include="Basket.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Cart.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ImageThumbnailTemplate.xaml">
       <Generator>MSBuild:Compile</Generator>

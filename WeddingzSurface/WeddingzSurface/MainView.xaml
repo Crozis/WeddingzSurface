@@ -6,7 +6,7 @@ xmlns:my="clr-namespace:WeddingzSurface"
 Title="WeddingzSurface"
 >
     <s:SurfaceWindow.Resources>
-        <ImageBrush x:Key="WindowBackground" Opacity="1" ImageSource="pack://application:,,,/Resources/cross_scratches.png"></ImageBrush>
+        <ImageBrush x:Key="WindowBackground" TileMode="Tile" Opacity="1" ImageSource="pack://application:,,,/Resources/cross_scratches.jpg"></ImageBrush>
     </s:SurfaceWindow.Resources>
 
     <Grid Background="{StaticResource WindowBackground}" >
@@ -28,27 +28,24 @@ Title="WeddingzSurface"
                     OrientationOffsetFromTag="0"
                     PhysicalCenterOffsetFromTag="0,0"
                     />
+                <!-- Basket -->
+                <s:ByteTagVisualizationDefinition
+                    Source="Cart.xaml"
+                    Value="0xC3"
+                    OrientationOffsetFromTag="0"
+                    PhysicalCenterOffsetFromTag="0,0"
+                    />
             </s:TagVisualizer.Definitions>
-
+           
             <s:ScatterView Name="MainScatterView">
                 <s:ScatterViewItem Name="trashbin_svi">
                     <my:TrashBin x:Name="trashbin" />
                 </s:ScatterViewItem>
+               
             </s:ScatterView>
-            <!--
-            <s:ScatterView.ItemTemplate>
-                    <DataTemplate>
-                        <Grid>
-                            <Image Source="{Binding frontPicture}" />
-                            <Label Content="{Binding name}" />
-                        </Grid>
-                    </DataTemplate>
-                </s:ScatterView.ItemTemplate>
-            </s:ScatterView>
-            -->
-
         </s:TagVisualizer>
-
+        <Label FontSize="40" Name="WeddingName1" Foreground="#FFB40000" Width="auto" Margin="493,0,496,0" VerticalAlignment="Top" />
+        <Label FontSize="40" Name="WeddingName2" Foreground="#FFB40000" Width="auto" Margin="493,0,496,0" VerticalAlignment="Bottom" />
     </Grid>
 
 </s:SurfaceWindow>
