@@ -18,6 +18,7 @@ using System.Net;
 using System.IO;
 using Newtonsoft.Json;
 using WeddingzSurface.Models;
+using System.Collections.ObjectModel;
 namespace WeddingzSurface
 {
     /// <summary>
@@ -97,17 +98,34 @@ namespace WeddingzSurface
 
         public void loadServices(String service_name)
         {
+            ScatterView sv = ((ScatterView)MainView.GetWindow(this).FindName("MainScatterView"));
+            sv.Items.Clear();
+
+            // init trashbin
+            StaticField.trashSVI = new TrashBinScatterViewItem(new TrashBin());
+            sv.Items.Add(StaticField.trashSVI);
+            
+            var dataTemplate = new ObservableCollection<Trash>();
+
             foreach (ProviderType provider_type in StaticField.wedding.service_types)
             {
                 if (provider_type.name == service_name)
                 {
-                    ScatterView sv = ((ScatterView)MainView.GetWindow(this).FindName("MainScatterView"));
-                    sv.Items.Clear();
 
                     foreach (Provider pr in provider_type.services)
                     {
-                        sv.Items.Add(new ProviderScatterViewItem(new ProviderTemplate(pr)));
+                        ProviderTemplate pt = new ProviderTemplate(pr);
+                        if (pr.activated)
+                        {
+                            sv.Items.Add(new ProviderScatterViewItem(pt));
+                        }
+                        else
+                        {
+                            Trash trash = new Trash(pt, pt.ProviderImage.Source);
+                            dataTemplate.Add(trash);
+                        }
                     }
+                    StaticField.trashSVI.trashBin.ItemsSource = dataTemplate;
                 }
             }
         }

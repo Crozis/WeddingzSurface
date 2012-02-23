@@ -16,7 +16,7 @@ namespace WeddingzSurface
 
     public partial class ProviderTemplate : UserControl, ICloneable
     {
-        private Provider provider;
+        public Provider provider;
         private ProviderItemState currentState;
 
         private ProviderScatterViewItem parent;

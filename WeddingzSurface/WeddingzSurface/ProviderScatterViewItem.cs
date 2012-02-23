@@ -62,6 +62,20 @@ namespace WeddingzSurface
                 dataTemplate.Add(trash);
 
                 t.ItemsSource = dataTemplate;
+                
+                // loop over Wedding services to disactivate
+                var st = StaticField.wedding.service_types;
+                for (int i = 0; i < st.Count; i++)
+                {
+                    for (int j = 0; j < st[i].services.Count; j++)
+                    {
+                        if (s.providerTemplate.provider.id == st[i].services[j].id)
+                        {
+                            st[i].services[j].activated = false;
+                            Console.WriteLine("GOT IT !" + st[i].services[j].activated);
+                        }
+                    }
+                }
 
                 // loop over all scattersView to delete
                 ScatterView sv = ((ScatterView)MainView.GetWindow(this).FindName("MainScatterView"));

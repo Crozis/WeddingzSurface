@@ -155,6 +155,17 @@ namespace WeddingzSurface
             newItem.Center = e.Cursor.GetPosition(MainScatterView);
             // Add it to the scatterview
             MainScatterView.Items.Add(newItem);
+
+            // loop over Wedding services to disactivate
+            var st = StaticField.wedding.service_types;
+            for (int i = 0; i < st.Count; i++)
+            {
+                if (trashToRecover.template.provider.id == st[i].id)
+                {
+                    st[i].activated = true;
+                    Console.WriteLine("GOT IT !" + st[i].activated);
+                }
+            }
         }
 
     }
