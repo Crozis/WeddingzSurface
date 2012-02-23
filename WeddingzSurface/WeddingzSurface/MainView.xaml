@@ -17,21 +17,21 @@ Title="WeddingzSurface"
                 <!-- iPad -->
                 <s:ByteTagVisualizationDefinition
                     Source="iPadView.xaml"
-                    Value="0xC1"
+                    Value="0xC4"
                     OrientationOffsetFromTag="0"
                     PhysicalCenterOffsetFromTag="0,0"
                     />
-                <!-- Basket -->
+                <!-- Basket
                 <s:ByteTagVisualizationDefinition
                     Source="Basket.xaml"
                     Value="0xC2"
                     OrientationOffsetFromTag="0"
                     PhysicalCenterOffsetFromTag="0,0"
-                    />
+                    /> -->
                 <!-- Basket -->
                 <s:ByteTagVisualizationDefinition
                     Source="Cart.xaml"
-                    Value="0xC3"
+                    Value="0xC1"
                     OrientationOffsetFromTag="0"
                     PhysicalCenterOffsetFromTag="0,0"
                     />

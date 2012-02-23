@@ -37,7 +37,23 @@ namespace WeddingzSurface
 
         private void Cart_Loaded(object sender, RoutedEventArgs e)
         {
+            Label label1 = ((Label)MainView.GetWindow(this).FindName("WeddingName1"));
+            Label label2 = ((Label)MainView.GetWindow(this).FindName("WeddingName2"));
+            label1.Content = "";
+            label2.Content = "";
+            
+
+            /*Image on buttons*/
             /*
+            Image logoImage = new Image();
+            BitmapImage logoBitmap = new BitmapImage();
+            logoBitmap.BeginInit();
+            logoBitmap.UriSource = new Uri("http://img594.imageshack.us/img594/8813/hebergement.png");
+            logoBitmap.EndInit();
+            logoImage.Source = logoBitmap;
+            florist.Content = logoImage;
+            Console.WriteLine("???");
+            */
             HttpWebRequest request = WebRequest.Create("http://weddingz.heroku.com/weddings/activated.json") as HttpWebRequest;
             String jsonResponse = "";
             using (HttpWebResponse response = request.GetResponse() as HttpWebResponse)
@@ -47,16 +63,16 @@ namespace WeddingzSurface
                 jsonResponse = reader.ReadToEnd();
                 StaticField.wedding = JsonConvert.DeserializeObject<Wedding>(jsonResponse);
             }
-            */
+            
             foreach (ProviderType provider_type in StaticField.wedding.service_types) 
             {
                 switch(provider_type.name) 
                 {
-                    case "Fleuristes": florist.Content = "Fleuristes : " + count_activated_services(provider_type.services);  break;
-                    case "Lieux": place.Content = "Lieux : " + count_activated_services(provider_type.services); break;
-                    case "Animations": animation.Content = "Animation : " + count_activated_services(provider_type.services); break;
-                    case "Traiteurs": caterer.Content = "Décorations : " + count_activated_services(provider_type.services); break;
-                    case "Photographes": photograph.Content = "Photographes : " + count_activated_services(provider_type.services); break;
+                    case "Fleuristes": break; //florist.Content = "Fleuristes\n           " + count_activated_services(provider_type.services);  break;
+                    case "Lieux": break;//place.Content = "Lieux\n            " + count_activated_services(provider_type.services); break;
+                    case "Animations": break; //animation.Content = "Animation\n            " + count_activated_services(provider_type.services); break;
+                    case "Traiteurs": break; //caterer.Content = "Décorations\n            " + count_activated_services(provider_type.services); break;
+                    case "Photographes": break;//photograph.Content = "Photographes\n            " + count_activated_services(provider_type.services); break;
                 }
             }
         }
@@ -73,7 +89,28 @@ namespace WeddingzSurface
             return i;
 
         }
+        public void florist_click(object sender, RoutedEventArgs e) { loadServices("Fleuristes"); }
+        public void place_click(object sender, RoutedEventArgs e) { loadServices("Lieux"); }
+        public void photograph_click(object sender, RoutedEventArgs e) { loadServices("Photographes"); }
+        public void caterer_click(object sender, RoutedEventArgs e) { loadServices("Traiteurs"); }
+        public void animation_click(object sender, RoutedEventArgs e) { loadServices("Animations"); }
 
+        public void loadServices(String service_name)
+        {
+            foreach (ProviderType provider_type in StaticField.wedding.service_types)
+            {
+                if (provider_type.name == service_name)
+                {
+                    ScatterView sv = ((ScatterView)MainView.GetWindow(this).FindName("MainScatterView"));
+                    sv.Items.Clear();
+
+                    foreach (Provider pr in provider_type.services)
+                    {
+                        sv.Items.Add(new ProviderScatterViewItem(new ProviderTemplate(pr)));
+                    }
+                }
+            }
+        }
         private void TagVisualization_Unloaded(object sender, RoutedEventArgs e)
         {
 
