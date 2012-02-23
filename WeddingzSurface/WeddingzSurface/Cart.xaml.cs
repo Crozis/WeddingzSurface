@@ -54,25 +54,28 @@ namespace WeddingzSurface
             florist.Content = logoImage;
             Console.WriteLine("???");
             */
-            HttpWebRequest request = WebRequest.Create("http://weddingz.heroku.com/weddings/activated.json") as HttpWebRequest;
-            String jsonResponse = "";
-            using (HttpWebResponse response = request.GetResponse() as HttpWebResponse)
+            if (StaticField.wedding == null)
             {
-                // Get the response stream  
-                StreamReader reader = new StreamReader(response.GetResponseStream());
-                jsonResponse = reader.ReadToEnd();
-                StaticField.wedding = JsonConvert.DeserializeObject<Wedding>(jsonResponse);
+                HttpWebRequest request = WebRequest.Create("http://weddingz.heroku.com/weddings/activated.json") as HttpWebRequest;
+                String jsonResponse = "";
+                using (HttpWebResponse response = request.GetResponse() as HttpWebResponse)
+                {
+                    // Get the response stream  
+                    StreamReader reader = new StreamReader(response.GetResponseStream());
+                    jsonResponse = reader.ReadToEnd();
+                    StaticField.wedding = JsonConvert.DeserializeObject<Wedding>(jsonResponse);
+                }
             }
             
             foreach (ProviderType provider_type in StaticField.wedding.service_types) 
             {
                 switch(provider_type.name) 
                 {
-                    case "Fleuristes": break; //florist.Content = "Fleuristes\n           " + count_activated_services(provider_type.services);  break;
-                    case "Lieux": break;//place.Content = "Lieux\n            " + count_activated_services(provider_type.services); break;
-                    case "Animations": break; //animation.Content = "Animation\n            " + count_activated_services(provider_type.services); break;
-                    case "Traiteurs": break; //caterer.Content = "Décorations\n            " + count_activated_services(provider_type.services); break;
-                    case "Photographes": break;//photograph.Content = "Photographes\n            " + count_activated_services(provider_type.services); break;
+                    case "Fleuristes":   FloristNumber.Content    = count_activated_services(provider_type.services); break;
+                    case "Lieux":        PlaceNumber.Content      = count_activated_services(provider_type.services); break;
+                    case "Animations":   AnimationNumber.Content  = count_activated_services(provider_type.services); break;
+                    case "Traiteurs":    CatererNumber.Content    = count_activated_services(provider_type.services); break;
+                    case "Photographes": PhotographNumber.Content = count_activated_services(provider_type.services); break;
                 }
             }
         }
