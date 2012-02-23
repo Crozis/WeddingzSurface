@@ -37,6 +37,7 @@ namespace WeddingzSurface
 
         private void Cart_Loaded(object sender, RoutedEventArgs e)
         {
+            /*
             HttpWebRequest request = WebRequest.Create("http://weddingz.heroku.com/weddings/activated.json") as HttpWebRequest;
             String jsonResponse = "";
             using (HttpWebResponse response = request.GetResponse() as HttpWebResponse)
@@ -45,7 +46,8 @@ namespace WeddingzSurface
                 StreamReader reader = new StreamReader(response.GetResponseStream());
                 jsonResponse = reader.ReadToEnd();
                 StaticField.wedding = JsonConvert.DeserializeObject<Wedding>(jsonResponse);
-            }   
+            }
+            */
             foreach (ProviderType provider_type in StaticField.wedding.service_types) 
             {
                 switch(provider_type.name) 
