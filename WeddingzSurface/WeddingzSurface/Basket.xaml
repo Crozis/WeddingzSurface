@@ -3,12 +3,12 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:s="http://schemas.microsoft.com/surface/2008"
     Loaded="Basket_Loaded"
-    Unloaded="Basket_Unloaded" Height="676" Width="322">
+    Unloaded="Basket_Unloaded" Height="676" Width="322" Foreground="White">
     <Grid x:Name="ButtonsContainer" RenderTransformOrigin="0.487,0.545" Width="328" Height="652">
-        <s:SurfaceButton Click="florist_click" Margin="55,0,53,240" Background="#FFFF9900" Content="Fleuristes" FontSize="20" Height="50" VerticalAlignment="Bottom" />
-        <s:SurfaceButton Click="place_click" Margin="55,0,53,180" Background="#FFFF9900" Content="Lieux" FontSize="20" Height="50" VerticalAlignment="Bottom" />
-        <s:SurfaceButton Click="caterer_click" Margin="55,0,53,63" Background="#FFFF9900"  VerticalAlignment="Bottom" Height="50" Content="Traiteurs" FontSize="20"/>
-        <s:SurfaceButton Click="photograph_click" Margin="55,0,53,7" Background="#FFFF9900"  VerticalAlignment="Bottom" Height="50" Content="Photographes" FontSize="20" />
-        <s:SurfaceButton Click="animation_click" Margin="55,0,53,121" Background="#FFFF9900" Content="Animations" FontSize="20" Height="50" VerticalAlignment="Bottom" />
+        <s:SurfaceButton Click="florist_click" Margin="55,0,53,240" Background="#FFB40000" Content="Fleuristes" FontSize="20" Height="50" VerticalAlignment="Bottom" />
+        <s:SurfaceButton Click="place_click" Margin="55,0,53,180" Background="#FFB40000" Content="Lieux" FontSize="20" Height="50" VerticalAlignment="Bottom" />
+        <s:SurfaceButton Click="caterer_click" Margin="55,0,53,63" Background="#FFB40000"  VerticalAlignment="Bottom" Height="50" Content="Traiteurs" FontSize="20"/>
+        <s:SurfaceButton Click="photograph_click" Margin="55,0,53,7" Background="#FFB40000"  VerticalAlignment="Bottom" Height="50" Content="Photographes" FontSize="20" />
+        <s:SurfaceButton Click="animation_click" Margin="55,0,53,121" Background="#FFB40000" Content="Animations" FontSize="20" Height="50" VerticalAlignment="Bottom" />
     </Grid>
 </s:TagVisualization>
