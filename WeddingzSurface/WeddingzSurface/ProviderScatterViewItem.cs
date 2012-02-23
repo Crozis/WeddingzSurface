@@ -50,17 +50,16 @@ namespace WeddingzSurface
                 (centerS.Y >= centerTrashSVI.Y - max / 2))
             {
 
-                ObservableCollection<Image> dataTemplate = (ObservableCollection<Image>)t.ItemsSource;
+                ObservableCollection<Trash> dataTemplate = (ObservableCollection<Trash>) t.ItemsSource;
 
                 if (dataTemplate == null)
                 {
-                    dataTemplate = new ObservableCollection<Image>();
+                    dataTemplate = new ObservableCollection<Trash>();
                 }
 
-                Image i = new Image();
-                i.Source = s.providerTemplate.ProviderImage.Source;
 
-                dataTemplate.Add(i);
+                Trash trash = new Trash(s.providerTemplate, s.providerTemplate.ProviderImage.Source);
+                dataTemplate.Add(trash);
 
                 t.ItemsSource = dataTemplate;
 

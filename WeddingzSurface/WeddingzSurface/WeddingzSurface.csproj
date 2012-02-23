@@ -124,6 +124,9 @@
     <Compile Include="ProviderTemplate.xaml.cs">
       <DependentUpon>ProviderTemplate.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Trash.xaml.cs">
+      <DependentUpon>Trash.xaml</DependentUpon>
+    </Compile>
     <Compile Include="TrashBin.cs" />
     <Compile Include="TrashBinScatterViewItem.cs" />
     <AppDesigner Include="Properties\" />
@@ -164,6 +167,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ProviderTemplate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Trash.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

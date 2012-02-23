@@ -37,7 +37,7 @@ Title="WeddingzSurface"
                     />
             </s:TagVisualizer.Definitions>
 
-            <s:ScatterView Name="MainScatterView" Drop="MainScatterView_Drop">
+            <s:ScatterView Name="MainScatterView" Background="Transparent" AllowDrop="True"  s:SurfaceDragDrop.Drop="MainScatterView_Drop" >
             </s:ScatterView>
         </s:TagVisualizer>
 
