@@ -27,6 +27,7 @@ namespace WeddingzSurface
     /// </summary>
     public partial class iPadView : TagVisualization
     {
+        Wedding wedding;
         public iPadView()
         {
             InitializeComponent();
@@ -35,7 +36,7 @@ namespace WeddingzSurface
         private void iPadView_Loaded(object sender, RoutedEventArgs e)
         {
             HttpWebRequest request = WebRequest.Create("http://weddingz.heroku.com/weddings/activated.json") as HttpWebRequest;
-
+            
             // Get response
             String jsonResponse = "";
             using (HttpWebResponse response = request.GetResponse() as HttpWebResponse)
@@ -50,14 +51,16 @@ namespace WeddingzSurface
             }
             else
             {
-                Wedding wedding = JsonConvert.DeserializeObject<Wedding>(jsonResponse);
+                wedding = JsonConvert.DeserializeObject<Wedding>(jsonResponse);
                 
                 ScatterView sv = ((ScatterView)MainView.GetWindow(this).FindName("MainScatterView"));
                 //sv.Items.Clear();
+                /*
                 foreach (Provider pr in wedding.service_types.services)
                 {
                     sv.Items.Add(new ProviderScatterViewItem(new ProviderTemplate(pr)));
                 }
+                */
 
 
                 //progressBar1.Value = 0;

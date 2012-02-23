@@ -14,14 +14,18 @@ using System.Windows.Shapes;
 using Microsoft.Surface;
 using Microsoft.Surface.Presentation;
 using Microsoft.Surface.Presentation.Controls;
-
+using WeddingzSurface.Models;
+using Newtonsoft.Json;
+using System.Net;
+using System.IO;
 namespace WeddingzSurface
 {
     /// <summary>
     /// Interaction logic for Basket.xaml
     /// </summary>
-    public partial class Basket : SurfaceUserControl
+    public partial class Basket : TagVisualization
     {
+        Wedding wedding;
         public Basket()
         {
             InitializeComponent();
@@ -40,34 +44,38 @@ namespace WeddingzSurface
             }
             if (jsonResponse == "Aucun wedding n'est activé")
             {
-                Console.WriteLine("HAHAHAHAHHA");
+                Console.WriteLine("Aucun wedding n'est activé");
             }
             else
             {
-                Wedding wedding = JsonConvert.DeserializeObject<Wedding>(jsonResponse);
-
-                ScatterView sv = ((ScatterView)MainView.GetWindow(this).FindName("MainScatterView"));
-                //sv.Items.Clear();
-                foreach (Provider pr in wedding.services)
-                {
-                    sv.Items.Add(new ProviderScatterViewItem(new ProviderTemplate(pr)));
-                }
-
-
-                //progressBar1.Value = 0;
-                rectangle2.Width = 0;
-                DoubleAnimation da = new DoubleAnimation();
-                da.From = 0;
-                da.To = 380;
-                da.Duration = new Duration(TimeSpan.FromSeconds(1.5));
-
-                rectangle2.BeginAnimation(Rectangle.WidthProperty, da);
-                //progressBar1.BeginAnimation(ProgressBar.ValueProperty, da);
-                //progressBar2.BeginAnimation(ProgressBar.ValueProperty, da);
+                wedding = JsonConvert.DeserializeObject<Wedding>(jsonResponse);
             }
         }
         private void Basket_Unloaded(object sender, RoutedEventArgs e)
         {
+        }
+
+        private void florist_click(object sender, RoutedEventArgs e)  { loadServices("Fleuristes"); }
+        private void place_click(object sender, RoutedEventArgs e)  { loadServices("Lieux"); }
+        private void photograph_click(object sender, RoutedEventArgs e) { loadServices("Photographes"); }
+        private void caterer_click(object sender, RoutedEventArgs e) { loadServices("Traiteurs"); }
+        private void animation_click(object sender, RoutedEventArgs e) { loadServices("Animations"); }
+
+        private void loadServices(String service_name)
+        {
+            foreach (ProviderType provider_type in wedding.service_types)
+            {
+                if (provider_type.name == service_name) 
+                {
+                    ScatterView sv = ((ScatterView)MainView.GetWindow(this).FindName("MainScatterView"));
+                    sv.Items.Clear();
+
+                    foreach (Provider pr in provider_type.services)
+                    {
+                        sv.Items.Add(new ProviderScatterViewItem(new ProviderTemplate(pr)));
+                    }   
+                }
+            }
         }
     }
 }

@@ -14,6 +14,7 @@ using System.Windows.Threading;
 using Microsoft.Surface;
 using Microsoft.Surface.Presentation;
 using Microsoft.Surface.Presentation.Controls;
+using WeddingzSurface.Models;
 
 namespace WeddingzSurface
 {
