@@ -133,12 +133,17 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\cross_scratches.jpg" />
+    <Resource Include="Resources\animation_icon.png" />
+    <Resource Include="Resources\caterer_icon.png" />
+    <Resource Include="Resources\florist_icon.png" />
     <Content Include="Resources\icon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\iconPreview.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Resource Include="Resources\photograph_icon.png" />
+    <Resource Include="Resources\place_icon.png" />
     <Resource Include="Resources\ProviderBackground.jpg" />
     <Resource Include="WeddingzSurface.xml" />
   </ItemGroup>

@@ -30,7 +30,13 @@ namespace WeddingzSurface
         {
             InitializeComponent();
         }
-        private void Basket_Loaded(object sender, RoutedEventArgs e) {}
+        private void Basket_Loaded(object sender, RoutedEventArgs e) 
+        {
+            Label label1 = ((Label)MainView.GetWindow(this).FindName("WeddingName1"));
+            Label label2 = ((Label)MainView.GetWindow(this).FindName("WeddingName2"));
+            label1.Content = "";
+            label2.Content = "";
+        }
         private void Basket_Unloaded(object sender, RoutedEventArgs e) {}
 
         public void florist_click(object sender, RoutedEventArgs e) { loadServices("Fleuristes"); }
