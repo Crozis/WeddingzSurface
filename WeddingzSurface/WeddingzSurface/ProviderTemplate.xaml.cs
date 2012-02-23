@@ -49,15 +49,14 @@ namespace WeddingzSurface
             this.ProviderNameDetail.Content = this.provider.name;
             this.ProviderDescription.Text = this.provider.description;
             this.ProviderFares.Content = this.provider.price;
-            this.ProviderPrincipalImage.Source = BitmapFrame.Create(new Uri(this.provider.front_picture));
 
             
             ObservableCollection<ImageThumbnailTemplate> dataTemplate = new ObservableCollection<ImageThumbnailTemplate>();
             foreach (string url in this.provider.pictures_url) {
-                ImageThumbnailTemplate itt = new ImageThumbnailTemplate(url, this.ProviderPrincipalImage);
+                ImageThumbnailTemplate itt = new ImageThumbnailTemplate(url);
                 dataTemplate.Add(itt);
             }
-            ImageThumbnailTemplate it = new ImageThumbnailTemplate(this.provider.front_picture, this.ProviderPrincipalImage);
+            ImageThumbnailTemplate it = new ImageThumbnailTemplate(this.provider.front_picture);
             dataTemplate.Add(it);
             
             this.PhotoLibrary.ItemsSource = dataTemplate;
@@ -116,11 +115,28 @@ namespace WeddingzSurface
             Storyboard result = new Storyboard();
             Duration duration = TimeSpan.FromMilliseconds(500);
 
-            double x = this.getParent().Width;
+            double x = 0;
+            if (!showBack)
+            {
+                x = ProviderOverview.Width;
+            }
+            else
+            {
+                x = ProviderDetail.Width;
+            }
+            double y = 0;
+            if (!showBack)
+            {
+                y = ProviderOverview.Height;
+            }
+            else
+            {
+                y = ProviderDetail.Height;
+            }
 
             DoubleAnimation wModifier = new DoubleAnimation()
             {
-                To = x * (showBack ? 2 : 1),
+                To = x,
                 Duration = duration
             };
 
@@ -129,7 +145,7 @@ namespace WeddingzSurface
 
             DoubleAnimation hModifier = new DoubleAnimation()
             {
-                To = x * (showBack ? 2 : 1),
+                To = y,
                 Duration = duration
             };
 
