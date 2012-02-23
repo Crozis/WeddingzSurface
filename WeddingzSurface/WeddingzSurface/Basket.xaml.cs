@@ -14,25 +14,19 @@ using System.Windows.Shapes;
 using Microsoft.Surface;
 using Microsoft.Surface.Presentation;
 using Microsoft.Surface.Presentation.Controls;
-using System.Net;
-using System.IO;
-using System.Windows.Media.Animation;
-using Newtonsoft.Json;
-using WeddingzSurface.Models;
 
 namespace WeddingzSurface
 {
     /// <summary>
-    /// Interaction logic for iPadView.xaml
+    /// Interaction logic for Basket.xaml
     /// </summary>
-    public partial class iPadView : TagVisualization
+    public partial class Basket : SurfaceUserControl
     {
-        public iPadView()
+        public Basket()
         {
             InitializeComponent();
         }
-
-        private void iPadView_Loaded(object sender, RoutedEventArgs e)
+        private void Basket_Loaded(object sender, RoutedEventArgs e)
         {
             HttpWebRequest request = WebRequest.Create("http://weddingz.heroku.com/weddings/activated.json") as HttpWebRequest;
 
@@ -46,15 +40,15 @@ namespace WeddingzSurface
             }
             if (jsonResponse == "Aucun wedding n'est activé")
             {
-                Console.WriteLine("Aucun wedding n'est activé.");
+                Console.WriteLine("HAHAHAHAHHA");
             }
             else
             {
                 Wedding wedding = JsonConvert.DeserializeObject<Wedding>(jsonResponse);
-                
+
                 ScatterView sv = ((ScatterView)MainView.GetWindow(this).FindName("MainScatterView"));
                 //sv.Items.Clear();
-                foreach (Provider pr in wedding.service_types.services)
+                foreach (Provider pr in wedding.services)
                 {
                     sv.Items.Add(new ProviderScatterViewItem(new ProviderTemplate(pr)));
                 }
@@ -72,14 +66,8 @@ namespace WeddingzSurface
                 //progressBar2.BeginAnimation(ProgressBar.ValueProperty, da);
             }
         }
-        private void iPadView_Unloaded(object sender, RoutedEventArgs e)
+        private void Basket_Unloaded(object sender, RoutedEventArgs e)
         {
         }
-
-        private void progressBar2_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
-        {
-
-        }
-
     }
 }
