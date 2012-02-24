@@ -5,6 +5,8 @@ using System.Text;
 using System.Windows.Controls;
 using Microsoft.Surface.Presentation.Controls;
 using Microsoft.Surface.Presentation;
+using System.Windows.Media.Imaging;
+using System.Windows.Media;
 
 namespace WeddingzSurface
 {
@@ -12,9 +14,18 @@ namespace WeddingzSurface
     {
         public TrashBin()
         {
+            this.Width = 130;
+            this.Height = 130;
+            this.MaxWidth = this.Width;
+            this.MaxHeight = this.Height;
+            this.MinWidth = this.Width;
+            this.MinHeight = this.Height;
             //SurfaceDragDrop.AddPreviewQueryTargetHandler(this, OnPreviewQueryTarget);
             SurfaceDragDrop.AddPreviewDropHandler(this, OnDrop);
             //SurfaceDragDrop.AddPreviewDropHandler(this, copyBack);
+            ImageBrush myBrush = new ImageBrush();
+            myBrush.ImageSource = new BitmapImage(new Uri(@"C:\Users\Jeremy\Documents\git\WeddingzSurface\WeddingzSurface\WeddingzSurface\Resources\trash_bin.png", UriKind.Absolute));
+            this.Background = myBrush;
         }
 
         /// <summary>
