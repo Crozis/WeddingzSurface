@@ -33,7 +33,44 @@ namespace WeddingzSurface
 
         private void ValidateButton_Click(object sender, RoutedEventArgs e)
         {
+            String activated_services = "";
+            String disabled_services = "";
+            foreach (ProviderType provider_type in StaticField.wedding.service_types) 
+            {
+                foreach (Provider service in provider_type.services) 
+                {
+                    if (service.activated == true)
+                    {
+                        activated_services += service.id + ";" ;
+                    }
+                    else
+                    {
+                        disabled_services += service.id + ";";
+                    }
+                }
+            }
+            ScatterView sv = ((ScatterView)MainView.GetWindow(this).FindName("MainScatterView"));
+            sv.Items.Clear();
+            
+            try
+            {
 
+                HttpWebRequest request2 = WebRequest.Create("http://weddingz.heroku.com/weddings/" + StaticField.wedding.id + "/disable_services/" + disabled_services) as HttpWebRequest;
+                request2.GetResponse();
+            }
+            catch (WebException)
+            {
+            }
+            
+            try
+            {
+                HttpWebRequest request1 = WebRequest.Create("http://weddingz.heroku.com/weddings/" + StaticField.wedding.id + "/activate_services/" + activated_services) as HttpWebRequest;
+                request1.GetResponse();
+            }
+            catch (WebException) { 
+            }
+            
+            
         }
 
         private void Cart_Loaded(object sender, RoutedEventArgs e)
@@ -43,37 +80,28 @@ namespace WeddingzSurface
             label1.Content = "";
             label2.Content = "";
             
-
-            /*Image on buttons*/
-            /*
-            Image logoImage = new Image();
-            BitmapImage logoBitmap = new BitmapImage();
-            logoBitmap.BeginInit();
-            logoBitmap.UriSource = new Uri("http://img594.imageshack.us/img594/8813/hebergement.png");
-            logoBitmap.EndInit();
-            logoImage.Source = logoBitmap;
-            florist.Content = logoImage;
-            Console.WriteLine("???");
-            */
-            HttpWebRequest request = WebRequest.Create("http://weddingz.heroku.com/weddings/activated.json") as HttpWebRequest;
-            String jsonResponse = "";
-            using (HttpWebResponse response = request.GetResponse() as HttpWebResponse)
+            if (StaticField.wedding == null)
             {
-                // Get the response stream  
-                StreamReader reader = new StreamReader(response.GetResponseStream());
-                jsonResponse = reader.ReadToEnd();
-                StaticField.wedding = JsonConvert.DeserializeObject<Wedding>(jsonResponse);
+                HttpWebRequest request = WebRequest.Create("http://weddingz.heroku.com/weddings/activated.json") as HttpWebRequest;
+                String jsonResponse = "";
+                using (HttpWebResponse response = request.GetResponse() as HttpWebResponse)
+                {
+                    // Get the response stream  
+                    StreamReader reader = new StreamReader(response.GetResponseStream());
+                    jsonResponse = reader.ReadToEnd();
+                    StaticField.wedding = JsonConvert.DeserializeObject<Wedding>(jsonResponse);
+                }
             }
             
             foreach (ProviderType provider_type in StaticField.wedding.service_types) 
             {
                 switch(provider_type.name) 
                 {
-                    case "Fleuristes": break; //florist.Content = "Fleuristes\n           " + count_activated_services(provider_type.services);  break;
-                    case "Lieux": break;//place.Content = "Lieux\n            " + count_activated_services(provider_type.services); break;
-                    case "Animations": break; //animation.Content = "Animation\n            " + count_activated_services(provider_type.services); break;
-                    case "Traiteurs": break; //caterer.Content = "Décorations\n            " + count_activated_services(provider_type.services); break;
-                    case "Photographes": break;//photograph.Content = "Photographes\n            " + count_activated_services(provider_type.services); break;
+                    case "Fleuristes":   FloristNumber.Content    = count_activated_services(provider_type.services); break;
+                    case "Lieux":        PlaceNumber.Content      = count_activated_services(provider_type.services); break;
+                    case "Animations":   AnimationNumber.Content  = count_activated_services(provider_type.services); break;
+                    case "Traiteurs":    CatererNumber.Content    = count_activated_services(provider_type.services); break;
+                    case "Photographes": PhotographNumber.Content = count_activated_services(provider_type.services); break;
                 }
             }
         }

@@ -81,9 +81,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Basket.xaml.cs">
-      <DependentUpon>Basket.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Cart.xaml.cs">
       <DependentUpon>Cart.xaml</DependentUpon>
     </Compile>
@@ -136,6 +133,8 @@
     <Resource Include="Resources\animation_icon.png" />
     <Resource Include="Resources\caterer_icon.png" />
     <Resource Include="Resources\florist_icon.png" />
+    <Resource Include="Resources\bulle.png" />
+    <Resource Include="Resources\bulle_up.png" />
     <Content Include="Resources\icon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -151,10 +150,6 @@
     <Resource Include="Resources\WindowBackground.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Page Include="Basket.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="Cart.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
