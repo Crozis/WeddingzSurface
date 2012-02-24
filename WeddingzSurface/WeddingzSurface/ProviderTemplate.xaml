@@ -7,7 +7,9 @@
     Background="Transparent"
     Opacity="0.8"
     Margin="0">
-    <Grid Name="ProviderGride" Height="280" Width="350">
+    <Grid Name="ProviderGride"
+          Height="480" Width="350"
+          MinHeight="280" MinWidth="150">
         <Grid Name="ProviderOverview"
               Visibility="Visible"
               Canvas.Top="0"
@@ -41,23 +43,23 @@
                    Width="350" Height="38"
                    VerticalAlignment="Top" />
             <TextBlock Name="ProviderDescription"
+                       TextWrapping="Wrap"
                        Margin="10,40,10,0"
-                       Text="Description"
+                       Text="Description DescriptionDescriptionDescription DescriptionDescriptionDescriptionDescriptionDescription"
                        Width="330" Height="100"
                        VerticalAlignment="Top" />
-            <Label Name="ProviderFares" 
-                   Margin="5,150,0,0" 
-                   Content="Tarifs" 
-                   HorizontalAlignment="Left" 
-                   Width="100" Height="35" 
-                   VerticalAlignment="Top" />
+            <TextBlock Name="ProviderFares"
+                       TextWrapping="Wrap"
+                       Margin="8,0,7,3"
+                       FontWeight="Bold"
+                       FontSize="14"
+                       Text="Tarifs" Height="49" VerticalAlignment="Bottom" />
             <my:LibraryBar Name="PhotoLibrary"
                            Background="Transparent" BorderBrush="Transparent"
                            Foreground="Transparent" OpacityMask="Black"
                            BorderThickness="0" Rows="1" 
                            xmlns:my="http://schemas.microsoft.com/surface/2008" 
-                           Margin="0,200,0,0" 
-                           Width="350" Height="300" />
+                           Margin="0,142,0,38" />
         </Grid>
     </Grid>
 </UserControl>
