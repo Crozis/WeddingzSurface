@@ -48,7 +48,7 @@ namespace WeddingzSurface
             this.ProviderName.Content = this.provider.name;
             this.ProviderNameDetail.Content = this.provider.name;
             this.ProviderDescription.Text = this.provider.description;
-            this.ProviderFares.Text = this.provider.price;
+            this.ProviderFares.Text = "A partir de " + this.provider.price_form + "€";
 
             
             ObservableCollection<ImageThumbnailTemplate> dataTemplate = new ObservableCollection<ImageThumbnailTemplate>();
@@ -116,24 +116,24 @@ namespace WeddingzSurface
             Duration duration = TimeSpan.FromMilliseconds(500);
 
             double x = 0;
+            double y = 0;
             if (!showBack)
             {
                 x = ProviderOverview.Width;
+                this.parent.MaxWidth = 350;
+
+                y = ProviderOverview.Height;
+                this.parent.MaxHeight = 480;
             }
             else
             {
                 x = ProviderDetail.Width;
-            }
-            double y = 0;
-            if (!showBack)
-            {
-                y = ProviderOverview.Height;
-            }
-            else
-            {
-                y = ProviderDetail.Height;
-            }
+                this.parent.MaxWidth = 250;
 
+                y = ProviderDetail.Height;
+                this.parent.MaxHeight = 280;
+            }
+            
             DoubleAnimation wModifier = new DoubleAnimation()
             {
                 To = x,

@@ -20,11 +20,10 @@ namespace WeddingzSurface
 
         public ProviderScatterViewItem(ProviderTemplate pt)
         {
-
             this.Width = 250;
             this.Height = 150;
-            this.MaxWidth = 350;
-            this.MaxHeight = 480;
+            this.MaxWidth = 250;
+            this.MaxHeight = 150;
             this.MinWidth = 250;
             this.MinHeight = 150;
             Console.WriteLine("New PSVI");

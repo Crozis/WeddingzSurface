@@ -43,22 +43,20 @@
                    VerticalAlignment="Top" />
             <TextBlock Name="ProviderDescription"
                        TextWrapping="Wrap"
-                       Margin="10,40,10,0"
-                       Text="Description DescriptionDescriptionDescription DescriptionDescriptionDescriptionDescriptionDescription"
-                       Width="330" Height="100"
-                       VerticalAlignment="Top" />
+                       Margin="10,0,10,57"
+                       Text="Description DescriptionDescriptionDescription DescriptionDescriptionDescriptionDescriptionDescription" Height="100" VerticalAlignment="Bottom" />
             <TextBlock Name="ProviderFares"
                        TextWrapping="Wrap"
-                       Margin="8,0,7,3"
+                       Margin="147,0,10,12"
                        FontWeight="Bold"
-                       FontSize="14"
-                       Text="Tarifs" Height="49" VerticalAlignment="Bottom" />
+                       FontSize="20"
+                       Text="Tarifs" Height="26" VerticalAlignment="Bottom" FlowDirection="RightToLeft" />
             <my:LibraryBar Name="PhotoLibrary"
                            Background="Transparent" BorderBrush="Transparent"
                            Foreground="Transparent" OpacityMask="Black"
                            BorderThickness="0" Rows="1" 
                            xmlns:my="http://schemas.microsoft.com/surface/2008" 
-                           Margin="0,142,0,38" />
+                           Margin="0,26,0,154" />
         </Grid>
     </Grid>
 </UserControl>

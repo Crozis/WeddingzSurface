@@ -13,7 +13,12 @@ namespace WeddingzSurface
 
         public TrashBinScatterViewItem(TrashBin trash)
         {
-            this.MaxWidth = 200;
+            this.Width = 130;
+            this.Height = 130;
+            this.MaxWidth = this.Width;
+            this.MaxHeight = this.Height;
+            this.MinWidth = this.Width;
+            this.MinHeight = this.Height;
             Console.WriteLine("New Trash");
             this.trashBin = trash;
             this.initUI();
