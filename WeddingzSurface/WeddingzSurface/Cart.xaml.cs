@@ -49,13 +49,27 @@ namespace WeddingzSurface
                     }
                 }
             }
-            HttpWebRequest request1 = WebRequest.Create("http://weddingz.heroku.com/weddings/" + StaticField.wedding.id + "/activate_services/" + activated_services) as HttpWebRequest;
-            request1.GetResponse();
-
-            HttpWebRequest request2 = WebRequest.Create("http://weddingz.heroku.com/weddings/" + StaticField.wedding.id + "/disabled_services/" + disabled_services) as HttpWebRequest;
-            request2.GetResponse();
             ScatterView sv = ((ScatterView)MainView.GetWindow(this).FindName("MainScatterView"));
             sv.Items.Clear();
+            
+            try
+            {
+
+                HttpWebRequest request2 = WebRequest.Create("http://weddingz.heroku.com/weddings/" + StaticField.wedding.id + "/disable_services/" + disabled_services) as HttpWebRequest;
+                request2.GetResponse();
+            }
+            catch (WebException)
+            {
+            }
+            
+            try
+            {
+                HttpWebRequest request1 = WebRequest.Create("http://weddingz.heroku.com/weddings/" + StaticField.wedding.id + "/activate_services/" + activated_services) as HttpWebRequest;
+                request1.GetResponse();
+            }
+            catch (WebException) { 
+            }
+            
             
         }
 
