@@ -2,8 +2,9 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:s="http://schemas.microsoft.com/surface/2008"
+    Name="CartView"
     Loaded="Cart_Loaded"
-    Unloaded="TagVisualization_Unloaded" Height="818" Width="730" Foreground="White">
+    Unloaded="Cart_Unloaded" Height="818" Width="730" Foreground="White">
     <Grid x:Name="ButtonsContainer" RenderTransformOrigin="0.487,0.545" Width="328" Height="793">
         <Image Source="pack://application:,,,/Resources/bulle.png" Width="74" Height="51" HorizontalAlignment="Right" Margin="0,316,-192,0" VerticalAlignment="Top" />
         <Image Source="pack://application:,,,/Resources/bulle.png" Width="74" Height="51" HorizontalAlignment="Right" Margin="0,0,-192,311" VerticalAlignment="Bottom" />

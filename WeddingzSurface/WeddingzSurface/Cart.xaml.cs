@@ -19,6 +19,8 @@ using System.IO;
 using Newtonsoft.Json;
 using WeddingzSurface.Models;
 using System.Collections.ObjectModel;
+using System.Windows.Media.Animation;
+
 namespace WeddingzSurface
 {
     /// <summary>
@@ -69,6 +71,12 @@ namespace WeddingzSurface
             }
             catch (WebException) { 
             }
+
+            DoubleAnimation da = new DoubleAnimation();
+            da.From = 1;
+            da.To = 0;
+            da.Duration = new Duration(TimeSpan.FromSeconds(1.5));
+            CartView.BeginAnimation(TagVisualization.OpacityProperty, da);
             
             
         }
@@ -157,7 +165,7 @@ namespace WeddingzSurface
                 }
             }
         }
-        private void TagVisualization_Unloaded(object sender, RoutedEventArgs e)
+        private void Cart_Unloaded(object sender, RoutedEventArgs e)
         {
 
         }
