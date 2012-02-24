@@ -48,7 +48,7 @@ namespace WeddingzSurface
             this.ProviderName.Content = this.provider.name;
             this.ProviderNameDetail.Content = this.provider.name;
             this.ProviderDescription.Text = this.provider.description;
-            this.ProviderFares.Content = this.provider.price;
+            this.ProviderFares.Text = this.provider.price;
 
             
             ObservableCollection<ImageThumbnailTemplate> dataTemplate = new ObservableCollection<ImageThumbnailTemplate>();
@@ -207,5 +207,10 @@ namespace WeddingzSurface
         }
 
         #endregion
+
+        private void ProviderImage_ImageFailed(object sender, ExceptionRoutedEventArgs e)
+        {
+
+        }
     }
 }

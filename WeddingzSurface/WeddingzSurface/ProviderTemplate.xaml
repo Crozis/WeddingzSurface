@@ -3,30 +3,28 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     Name="ProviderUserControl"
     Height="480" Width="350"
-    MaxWidth="350" MaxHeight="480"
     Background="Transparent"
     Opacity="0.8"
     Margin="0">
     <Grid Name="ProviderGride"
-          Height="480" Width="350"
-          MinHeight="280" MinWidth="150">
+          Height="480" Width="350">
         <Grid Name="ProviderOverview"
               Visibility="Visible"
               Canvas.Top="0"
-              Margin="0,-100,100,0"
+              Margin="0,0,100,0"
               Width="250" Height="150"
               MaxWidth="250" MaxHeight="150"
+              MinWidth="250" MinHeight="150"
               VerticalAlignment="Top">
             <Image Name="ProviderImage"
                    Canvas.Top="0"
                    Canvas.Left="0"
                    Stretch="Fill"
-                   Margin="19,43,22,10"
-                   Width="210" Height="100"
-                   MaxWidth="210" MaxHeight="100"/>
+                   Margin="19,43,21,7"
+                   MaxWidth="210" MaxHeight="100"
+                   Grid.RowSpan="2" />
             <Label Name="ProviderName"
-                   Content="Name"
-                   Width="250" Height="38"
+                   Content="Name" Height="38"
                    FontWeight="Bold"
                    FontSize="20"
                    VerticalAlignment="Top" />
@@ -36,7 +34,8 @@
               Canvas.Top="0"
               Margin="0,-200,0,-200"
               Width="350" Height="480"
-              MaxWidth="350" MaxHeight="480">
+              MaxWidth="350" MaxHeight="480"
+              MinWidth="350" MinHeight="480">
             <Label Name="ProviderNameDetail"
                    FontWeight="Bold" FontSize="20" 
                    Content="Name" 

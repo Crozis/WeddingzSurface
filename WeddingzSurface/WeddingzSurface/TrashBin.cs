@@ -14,10 +14,12 @@ namespace WeddingzSurface
     {
         public TrashBin()
         {
-            this.Width = 300;
-            this.Height = 150;
+            this.Width = 130;
+            this.Height = 130;
             this.MaxWidth = this.Width;
             this.MaxHeight = this.Height;
+            this.MinWidth = this.Width;
+            this.MinHeight = this.Height;
             //SurfaceDragDrop.AddPreviewQueryTargetHandler(this, OnPreviewQueryTarget);
             SurfaceDragDrop.AddPreviewDropHandler(this, OnDrop);
             //SurfaceDragDrop.AddPreviewDropHandler(this, copyBack);
